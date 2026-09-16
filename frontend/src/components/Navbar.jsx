@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useQuote } from "@/App";
@@ -26,7 +26,6 @@ const Logo = () => (
 export default function Navbar() {
   const { openQuote } = useQuote();
   const [open, setOpen] = useState(false);
-  const location = useLocation();
 
   const navLink = ({ isActive }) =>
     `link-underline font-mono text-xs uppercase tracking-[0.22em] transition-colors duration-200 ${
@@ -39,18 +38,12 @@ export default function Navbar() {
         <Logo />
 
         <nav className="hidden items-center gap-9 md:flex" aria-label="Primary">
+          <NavLink to="/" end data-testid="nav-home-link" className={navLink}>
+            Home
+          </NavLink>
           <NavLink to="/products" data-testid="nav-products-link" className={navLink}>
             Products
           </NavLink>
-          <Link
-            to="/#manifesto"
-            data-testid="nav-manifesto-link"
-            className={`link-underline font-mono text-xs uppercase tracking-[0.22em] transition-colors duration-200 ${
-              location.hash === "#manifesto" ? "text-forge" : "text-slate-300 hover:text-forge"
-            }`}
-          >
-            Manifesto
-          </Link>
           <NavLink to="/contact" data-testid="nav-contact-link" className={navLink}>
             Contact
           </NavLink>
@@ -90,8 +83,8 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-1 px-5 py-4">
               {[
+                { to: "/", label: "Home", id: "mobile-home-link" },
                 { to: "/products", label: "Products", id: "mobile-products-link" },
-                { to: "/#manifesto", label: "Manifesto", id: "mobile-manifesto-link" },
                 { to: "/contact", label: "Contact", id: "mobile-contact-link" },
               ].map((l) => (
                 <Link

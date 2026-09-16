@@ -53,8 +53,8 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/#manifesto" data-testid="footer-manifesto-link" className="link-underline text-slate-400 transition-colors hover:text-forge">
-                Manifesto
+              <Link to="/products" data-testid="footer-products-link" className="link-underline text-slate-400 transition-colors hover:text-forge">
+                Products
               </Link>
             </li>
             <li>

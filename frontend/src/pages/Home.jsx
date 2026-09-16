@@ -1,40 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, useInView, animate, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight, ArrowUpRight, ShieldCheck, Ruler, Flame, FileCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useQuote } from "@/App";
 import { MaskLine, Reveal, SectionHead } from "@/components/Reveal";
 import SparkCanvas from "@/components/SparkCanvas";
 import Marquee from "@/components/Marquee";
 import ProductDiagram from "@/components/ProductDiagram";
 import { PRODUCTS, IMAGES } from "@/data/products";
-
-const MANIFESTO = [
-  {
-    n: "01",
-    title: "Zero Leaks",
-    body: "Every seam is TIG-welded, soldered, or continuous-locked before it leaves the floor. If water can find a path, we haven't done our job — so we build like the warranty is forever.",
-    icon: ShieldCheck,
-  },
-  {
-    n: "02",
-    title: "Heavy-Gauge Metals",
-    body: "16oz cold-rolled copper, 304 and 316 stainless, 14-gauge structural galvanized. We stock the alloys architects specify and refuse to down-gauge to win a bid.",
-    icon: Flame,
-  },
-  {
-    n: "03",
-    title: "CNC Precision",
-    body: "Brake-formed to a half-millimeter, laser-cut to the line, checked against the shop drawing twice. Field-fit problems are solved here, not on your roof.",
-    icon: Ruler,
-  },
-  {
-    n: "04",
-    title: "Architect-Specified",
-    body: "ANSI/SPRI ES-1 certified edge metal, SMACNA-standard profiles, ASTM traceable alloys. Our submittal packages pass review the first time.",
-    icon: FileCheck,
-  },
-];
 
 const Counter = ({ to, decimals = 0, suffix = "" }) => {
   const ref = useRef(null);
@@ -183,41 +156,11 @@ const Hero = () => {
   );
 };
 
-const Manifesto = () => (
-  <section id="manifesto" className="relative border-b border-line" data-testid="manifesto-section">
-    <div className="mx-auto max-w-[1440px] px-5 py-24 sm:px-8 sm:py-32">
-      <SectionHead index="001" eyebrow="The ForgeLine Standard" title="Built Like The Roof Depends On It." />
-      <div className="mt-16 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4">
-        {MANIFESTO.map((m, i) => (
-          <Reveal key={m.n} delay={i * 0.12}>
-            <div
-              className="group relative h-full border-b border-r border-line bg-panel/30 p-8 transition-colors duration-300 hover:bg-panel"
-              data-testid={`manifesto-chapter-${m.n}`}
-            >
-              <span className="absolute left-0 top-0 h-0 w-[3px] bg-forge transition-all duration-500 ease-out group-hover:h-full" aria-hidden="true" />
-              <div className="flex items-start justify-between">
-                <span className="font-head text-6xl font-extrabold text-line transition-colors duration-300 group-hover:text-forge/25">
-                  {m.n}
-                </span>
-                <m.icon size={22} strokeWidth={1.5} className="mt-2 text-slate-500 transition-colors duration-300 group-hover:text-forge" />
-              </div>
-              <h3 className="mt-6 font-head text-2xl font-bold uppercase tracking-tight text-slate-100">
-                {m.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-400">{m.body}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
 const ShopFloor = () => (
   <section className="relative border-b border-line bg-panel/30" data-testid="shopfloor-section">
     <div className="blueprint-grid-fine absolute inset-0" aria-hidden="true" />
     <div className="relative mx-auto max-w-[1440px] px-5 py-24 sm:px-8 sm:py-32">
-      <SectionHead index="002" eyebrow="Inside The Plant" title="Cut. Brake. Weld. Ship." />
+      <SectionHead index="001" eyebrow="Inside The Plant" title="Cut. Brake. Weld. Ship." />
       <div className="mt-16 grid gap-6 lg:grid-cols-2">
         {[
           {
@@ -284,7 +227,7 @@ const ProductStrip = () => {
     <section className="border-b border-line" data-testid="product-strip-section">
       <div className="mx-auto max-w-[1440px] px-5 py-24 sm:px-8 sm:py-32">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHead index="003" eyebrow="The Lineup" title="Eight Components. One Watertight Roof." />
+          <SectionHead index="002" eyebrow="The Lineup" title="Eight Components. One Watertight Roof." />
           <Reveal delay={0.2}>
             <Link
               to="/products"
@@ -371,7 +314,6 @@ export default function Home() {
     <>
       <Hero />
       <Marquee />
-      <Manifesto />
       <ShopFloor />
       <Stats />
       <ProductStrip />
