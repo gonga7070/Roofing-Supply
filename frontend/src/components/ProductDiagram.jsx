@@ -43,15 +43,16 @@ const DRAWINGS = {
       <circle cx="148" cy="104" r="2.5" {...COMMON} />
     </g>
   ),
-  "roof-sumps": (
+  "stack-jacks": (
     <g>
-      <rect x="36" y="52" width="128" height="56" {...COMMON} />
-      <rect x="62" y="66" width="76" height="30" {...COMMON} />
-      <circle cx="100" cy="81" r="10" {...COMMON} />
-      <circle cx="100" cy="81" r="4" {...DASH} />
-      <line x1="36" y1="52" x2="36" y2="40" {...COMMON} />
-      <line x1="164" y1="52" x2="164" y2="40" {...COMMON} />
-      <line x1="36" y1="40" x2="164" y2="40" {...DASH} />
+      <rect x="52" y="96" width="96" height="12" {...COMMON} />
+      <polygon points="76,96 85,48 115,48 124,96" {...COMMON} />
+      <line x1="92" y1="48" x2="92" y2="28" {...COMMON} />
+      <line x1="108" y1="48" x2="108" y2="28" {...COMMON} />
+      <line x1="92" y1="28" x2="108" y2="28" {...COMMON} />
+      <line x1="85" y1="48" x2="115" y2="48" {...COMMON} />
+      <line x1="100" y1="48" x2="100" y2="96" {...DASH} />
+      <line x1="44" y1="108" x2="156" y2="108" {...DASH} />
     </g>
   ),
   scuppers: (
@@ -63,15 +64,6 @@ const DRAWINGS = {
       <line x1="40" y1="42" x2="126" y2="42" {...DASH} />
       <line x1="158" y1="84" x2="150" y2="94" {...COMMON} />
       <line x1="60" y1="62" x2="106" y2="62" {...DASH} />
-    </g>
-  ),
-  "custom-flashing": (
-    <g>
-      <polyline points="34,96 34,60 66,60 66,42 118,42 118,60 150,60 150,96" {...COMMON} />
-      <polyline points="34,74 66,74 66,56 118,56 118,74 150,74" {...DASH} />
-      <line x1="34" y1="104" x2="150" y2="104" {...COMMON} />
-      <line x1="28" y1="60" x2="34" y2="60" {...COMMON} />
-      <line x1="150" y1="60" x2="156" y2="60" {...COMMON} />
     </g>
   ),
   "roof-curbs": (

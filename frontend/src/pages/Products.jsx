@@ -148,7 +148,7 @@ export default function Products() {
           <SectionHead index="CAT—08" eyebrow="Full Fabrication Catalog" title="The Product Line" />
           <Reveal delay={0.15} className="mt-6 max-w-2xl">
             <p className="text-base leading-relaxed text-slate-400">
-              Eight component families covering every flat-roof penetration, drain point, and
+              Seven component families covering every flat-roof penetration, drain point, and
               perimeter edge. All stocked in standard sizes, all available as custom fabrication
               runs to your shop drawings.
             </p>
