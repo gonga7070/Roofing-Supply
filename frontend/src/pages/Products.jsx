@@ -9,8 +9,8 @@ import { PRODUCTS, CATEGORIES } from "@/data/products";
 
 const SpecRow = ({ label, value }) => (
   <div className="grid grid-cols-[110px_1fr] gap-3 border-b border-line/60 py-2.5 last:border-0">
-    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">{label}</span>
-    <span className="text-xs leading-relaxed text-slate-300">{value}</span>
+    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">{label}</span>
+    <span className="text-xs leading-relaxed text-neutral-700">{value}</span>
   </div>
 );
 
@@ -37,13 +37,13 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
       className="spotlight-card group relative flex flex-col border border-line bg-panel/40 transition-colors duration-300 hover:border-linehi"
     >
       <div className="flex items-center justify-between border-b border-line px-6 py-3">
-        <span className="font-mono text-[10px] tracking-[0.3em] text-slate-500">
+        <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-500">
           {String(index + 1).padStart(2, "0")}
         </span>
         <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-forge">{product.tag}</span>
       </div>
 
-      <div className="blueprint-grid-fine flex h-44 items-center justify-center border-b border-line text-steel/60 transition-colors duration-300 group-hover:text-steel">
+      <div className="blueprint-grid-fine flex h-44 items-center justify-center border-b border-line bg-neutral-950 text-steel/60 transition-colors duration-300 group-hover:text-steel">
         {product.image ? (
           <img
             src={product.image}
@@ -61,10 +61,10 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
 
       <div className="flex flex-1 flex-col p-6">
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-steel">{product.category}</span>
-        <h3 className="mt-2 font-head text-2xl font-bold uppercase leading-tight tracking-tight text-slate-100">
+        <h3 className="mt-2 font-head text-2xl font-bold uppercase leading-tight tracking-tight text-neutral-900">
           {product.name}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-slate-400">{product.shortDesc}</p>
+        <p className="mt-3 text-sm leading-relaxed text-neutral-600">{product.shortDesc}</p>
 
         <div className="mt-5">
           <SpecRow label="Materials" value={product.materials.join(" / ")} />
@@ -105,7 +105,7 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
             data-testid={`product-specs-btn-${product.id}`}
             onClick={onToggle}
             aria-expanded={expanded}
-            className="flex items-center justify-center gap-1.5 border border-linehi px-4 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-slate-300 transition-colors duration-200 hover:border-steel hover:text-steel"
+            className="flex items-center justify-center gap-1.5 border border-linehi px-4 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-neutral-700 transition-colors duration-200 hover:border-steel hover:text-steel"
           >
             {expanded ? <Minus size={13} /> : <Plus size={13} />}
             Specs
@@ -154,13 +154,13 @@ export default function Products() {
               className={`border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] transition-colors duration-200 ${
                 category === c
                   ? "border-forge bg-forge/15 text-forge"
-                  : "border-line text-slate-400 hover:border-linehi hover:text-slate-200"
+                  : "border-line text-neutral-600 hover:border-linehi hover:text-neutral-800"
               }`}
             >
               {c}
             </button>
           ))}
-          <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.25em] text-slate-500" data-testid="product-count">
+          <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.25em] text-neutral-500" data-testid="product-count">
             {visible.length} / {PRODUCTS.length} Lines
           </span>
         </div>

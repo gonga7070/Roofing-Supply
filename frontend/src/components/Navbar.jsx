@@ -13,7 +13,7 @@ const Logo = () => (
       <span className="absolute -right-1 -top-1 h-2 w-2 bg-forge" aria-hidden="true" />
     </span>
     <span className="leading-none">
-      <span className="block font-head text-xl font-bold uppercase tracking-wide text-slate-100">
+      <span className="block font-head text-xl font-bold uppercase tracking-wide text-neutral-900">
         ForgeLine
       </span>
       <span className="block font-mono text-[9px] uppercase tracking-[0.35em] text-steel">
@@ -29,7 +29,7 @@ export default function Navbar() {
 
   const navLink = ({ isActive }) =>
     `link-underline font-mono text-xs uppercase tracking-[0.22em] transition-colors duration-200 ${
-      isActive ? "text-forge active" : "text-slate-300 hover:text-forge"
+      isActive ? "text-forge active" : "text-neutral-700 hover:text-forge"
     }`;
 
   return (
@@ -64,7 +64,7 @@ export default function Navbar() {
             data-testid="nav-mobile-menu-button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center border border-line text-slate-200 transition-colors hover:border-forge hover:text-forge md:hidden"
+            className="flex h-10 w-10 items-center justify-center border border-line text-neutral-800 transition-colors hover:border-forge hover:text-forge md:hidden"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -92,7 +92,7 @@ export default function Navbar() {
                   to={l.to}
                   data-testid={l.id}
                   onClick={() => setOpen(false)}
-                  className="border-b border-line/60 py-3 font-head text-2xl font-semibold uppercase tracking-wide text-slate-200 transition-colors hover:text-forge"
+                  className="border-b border-line/60 py-3 font-head text-2xl font-semibold uppercase tracking-wide text-neutral-800 transition-colors hover:text-forge"
                 >
                   {l.label}
                 </Link>

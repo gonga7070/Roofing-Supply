@@ -20,15 +20,15 @@ module.exports = {
         mono: ['"JetBrains Mono"', 'monospace']
       },
       colors: {
-        ink: '#060606',
-        panel: '#0D0D0D',
-        card: '#141414',
-        line: '#1F1F1F',
-        linehi: '#383838',
+        ink: '#FFFFFF',
+        panel: '#F5F5F4',
+        card: '#FFFFFF',
+        line: '#E4E4E0',
+        linehi: '#C9C9C4',
         forge: '#E10600',
         forgedark: '#B00400',
-        steel: '#F5F5F5',
-        steeldark: '#9C9C9C',
+        steel: '#1A1A1A',
+        steeldark: '#6B6B6B',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card2: {

@@ -34,7 +34,7 @@ export const SectionHead = ({ index, eyebrow, title, className = "" }) => (
       <span className="h-px w-10 bg-forge/60" aria-hidden="true" />
       <span className="font-mono text-xs uppercase tracking-[0.25em] text-steel">{eyebrow}</span>
     </div>
-    <h2 className="mt-5 font-head text-3xl font-bold uppercase tracking-tight text-slate-100 sm:text-4xl lg:text-5xl">
+    <h2 className="mt-5 font-head text-3xl font-bold uppercase tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
       {title}
     </h2>
   </Reveal>

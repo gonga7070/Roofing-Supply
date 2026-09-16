@@ -76,7 +76,7 @@ const Hero = () => {
               </span>
             </MaskLine>
 
-            <h1 className="mt-7 font-head text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-slate-100 sm:text-6xl lg:text-7xl">
+            <h1 className="mt-7 font-head text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl">
               <MaskLine delay={0.3}>Built for the elements.</MaskLine>
               <MaskLine delay={0.42}>
                 <span className="text-forge">Engineered for performance.</span>
@@ -85,7 +85,7 @@ const Hero = () => {
             </h1>
 
             <Reveal delay={0.75} className="mt-6 max-w-xl">
-              <p className="text-base leading-relaxed text-slate-400 sm:text-lg">
+              <p className="text-base leading-relaxed text-neutral-600 sm:text-lg">
                 We manufacture the drainage and edge-metal components that keep commercial flat
                 roofs watertight — roof drains, scuppers, cones, stack jacks and more, brake-formed
                 and TIG-welded in Chicago.
@@ -105,7 +105,7 @@ const Hero = () => {
               <Link
                 to="/products"
                 data-testid="hero-cta-catalog-button"
-                className="group flex items-center gap-3 border border-linehi px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] text-slate-200 transition-colors duration-200 hover:border-steel hover:text-steel"
+                className="group flex items-center gap-3 border border-linehi px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] text-neutral-800 transition-colors duration-200 hover:border-steel hover:text-steel"
               >
                 Browse The Catalog
                 <ArrowRight size={15} strokeWidth={2} className="transition-transform duration-200 group-hover:translate-x-1" />
@@ -139,9 +139,9 @@ const Hero = () => {
 
       <motion.div style={{ opacity: fade }} className="relative z-10 border-t border-line/70">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-8">
-          <span className="font-mono text-[10px] tracking-[0.3em] text-slate-500">41.8781° N / 87.6298° W</span>
+          <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-500">41.8781° N / 87.6298° W</span>
           <span className="hidden h-8 w-px origin-top animate-scroll-pulse bg-forge sm:block" aria-hidden="true" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-slate-500">Scroll — 001</span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-500">Scroll — 001</span>
         </div>
       </motion.div>
     </section>
@@ -175,11 +175,11 @@ const ShopFloor = () => (
                 alt={card.label}
                 className="h-[380px] w-full object-cover saturate-[0.7] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" aria-hidden="true" />
-              <figcaption className="absolute inset-x-0 bottom-0 p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" aria-hidden="true" />
+              <figcaption className="absolute inset-x-0 bottom-0 border-t border-line bg-ink/90 p-6 backdrop-blur">
                 <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-forge">{card.label}</p>
                 <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-steel">{card.sub}</p>
-                <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-300">{card.caption}</p>
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-neutral-700">{card.caption}</p>
               </figcaption>
             </figure>
           </Reveal>
@@ -203,7 +203,7 @@ const Stats = () => (
           className={`border-line px-6 py-12 text-center sm:py-16 ${i % 2 === 1 ? "border-l" : ""} ${i >= 2 ? "border-t lg:border-t-0" : ""} ${i > 0 ? "lg:border-l" : ""}`}
           data-testid={`stat-${i}`}
         >
-          <p className="font-head text-5xl font-extrabold tracking-tight text-slate-100 sm:text-6xl">
+          <p className="font-head text-5xl font-extrabold tracking-tight text-neutral-900 sm:text-6xl">
             <Counter to={s.v} decimals={s.d} suffix={s.suffix} />
           </p>
           <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-steel">{s.label}</p>
@@ -224,7 +224,7 @@ const ProductStrip = () => {
             <Link
               to="/products"
               data-testid="product-strip-view-all"
-              className="group flex items-center gap-2 border border-linehi px-6 py-3 font-mono text-xs uppercase tracking-[0.25em] text-slate-200 transition-colors hover:border-forge hover:text-forge"
+              className="group flex items-center gap-2 border border-linehi px-6 py-3 font-mono text-xs uppercase tracking-[0.25em] text-neutral-800 transition-colors hover:border-forge hover:text-forge"
             >
               Full Catalog
               <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
@@ -242,7 +242,7 @@ const ProductStrip = () => {
                   className="group flex h-full flex-col border-b border-r border-line bg-panel/30 p-7 transition-colors duration-300 hover:bg-card"
                 >
                   <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-forge">{p.tag}</span>
-                  <div className="my-6 flex h-28 items-center justify-center text-steel/70 transition-colors duration-300 group-hover:text-steel">
+                  <div className="my-6 flex h-28 items-center justify-center bg-neutral-950 text-steel/70 transition-colors duration-300 group-hover:text-steel">
                     {p.image ? (
                       <img
                         src={p.image}
@@ -253,11 +253,11 @@ const ProductStrip = () => {
                       <ProductDiagram productId={id} className="h-full w-auto transition-transform duration-500 group-hover:scale-110" />
                     )}
                   </div>
-                  <h3 className="font-head text-xl font-bold uppercase tracking-tight text-slate-100 transition-colors group-hover:text-forge">
+                  <h3 className="font-head text-xl font-bold uppercase tracking-tight text-neutral-900 transition-colors group-hover:text-forge">
                     {p.shortName}
                   </h3>
-                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-slate-500">{p.shortDesc}</p>
-                  <span className="mt-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500 transition-colors group-hover:text-steel">
+                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-neutral-500">{p.shortDesc}</p>
+                  <span className="mt-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500 transition-colors group-hover:text-steel">
                     View Specs <ArrowUpRight size={12} />
                   </span>
                 </Link>
@@ -280,7 +280,7 @@ const CtaBand = () => {
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-steel">Specs In — Metal Out</p>
         </Reveal>
-        <h2 className="mx-auto mt-6 max-w-4xl font-head text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-slate-100 sm:text-7xl">
+        <h2 className="mx-auto mt-6 max-w-4xl font-head text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-neutral-900 sm:text-7xl">
           <MaskLine delay={0.1}>Spec It.</MaskLine>
           <MaskLine delay={0.22}>
             <span className="text-forge">We Fabricate It.</span>
@@ -299,7 +299,7 @@ const CtaBand = () => {
           <Link
             to="/contact"
             data-testid="cta-band-contact-button"
-            className="font-mono text-xs uppercase tracking-[0.25em] text-slate-400 underline decoration-linehi underline-offset-8 transition-colors hover:text-steel hover:decoration-steel"
+            className="font-mono text-xs uppercase tracking-[0.25em] text-neutral-600 underline decoration-linehi underline-offset-8 transition-colors hover:text-steel hover:decoration-steel"
           >
             Talk To The Shop
           </Link>

@@ -21,7 +21,7 @@ export default function Marquee({ className = "" }) {
       <div className="flex w-max animate-marquee items-center whitespace-nowrap">
         {row.map((item, i) => (
           <span key={i} className="flex items-center">
-            <span className="font-mono text-xs tracking-[0.3em] text-slate-400">{item}</span>
+            <span className="font-mono text-xs tracking-[0.3em] text-neutral-600">{item}</span>
             <span className="mx-8 inline-block h-1.5 w-1.5 rotate-45 bg-forge" />
           </span>
         ))}

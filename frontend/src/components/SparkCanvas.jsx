@@ -47,7 +47,7 @@ export default function SparkCanvas({ density = 42, className = "" }) {
         if (p.x > 1.03) p.x = -0.03;
         const flick = 0.55 + 0.45 * Math.sin(t + p.phase);
         ctx.globalAlpha = p.o * flick;
-        ctx.fillStyle = p.blue ? "#FFFFFF" : "#E10600";
+        ctx.fillStyle = p.blue ? "#151515" : "#E10600";
         ctx.fillRect(p.x * w, p.y * h, p.s, p.s);
       }
       raf = requestAnimationFrame(tick);

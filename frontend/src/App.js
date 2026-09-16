@@ -30,7 +30,7 @@ const Shell = ({ lenisRef }) => {
   return (
     <QuoteContext.Provider value={{ openQuote }}>
       <ScrollManager lenisRef={lenisRef} />
-      <div className="App min-h-screen bg-ink font-body text-slate-100">
+      <div className="App min-h-screen bg-ink font-body text-neutral-900">
         <div className="noise-overlay" aria-hidden="true" />
         <Navbar />
         <main>

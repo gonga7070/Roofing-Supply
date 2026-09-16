@@ -40,7 +40,7 @@ export default function Contact() {
         <div className="relative mx-auto max-w-[1440px] px-5 pb-16 pt-20 sm:px-8 sm:pt-28">
           <SectionHead index="TLK" eyebrow="Direct To The Estimating Desk" title="Talk To The Shop" />
           <Reveal delay={0.15} className="mt-6 max-w-2xl">
-            <p className="text-base leading-relaxed text-slate-400">
+            <p className="text-base leading-relaxed text-neutral-600">
               Call or email with the spec — sizes, gauges, finishes, quantities. A real estimator
               (not a bot) prices it and replies within one business day.
             </p>
@@ -58,10 +58,10 @@ export default function Contact() {
                 </span>
                 <div>
                   <h3 className="font-mono text-[10px] uppercase tracking-[0.25em] text-steel">{item.label}</h3>
-                  <p className="mt-2 font-head text-2xl font-bold tracking-tight text-slate-100 sm:text-3xl">
+                  <p className="mt-2 font-head text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
                     {item.lines[0]}
                   </p>
-                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
+                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">
                     {item.lines[1]}
                   </p>
                 </div>
@@ -90,7 +90,7 @@ export default function Contact() {
             <span className="absolute -left-px -top-px h-6 w-6 border-l-2 border-t-2 border-forge" aria-hidden="true" />
             <span className="absolute -bottom-px -right-px h-6 w-6 border-b-2 border-r-2 border-forge" aria-hidden="true" />
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-forge">Shop Note</p>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-300">
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-neutral-700">
               Call or email with your sizes, gauges, and quantities — a real estimator (not a bot)
               prices it and gets back to you within one business day. Custom runs need a dimensioned
               sketch or shop drawing; no drawing yet? Describe the condition and our detailers will
