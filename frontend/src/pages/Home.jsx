@@ -255,7 +255,7 @@ const ProductStrip = () => {
                       <img
                         src={p.image}
                         alt={p.shortName}
-                        className="h-full w-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                        className={`h-full w-full object-contain p-2 transition-transform duration-500 ${p.imageClass || "group-hover:scale-105"}`}
                       />
                     ) : (
                       <ProductDiagram productId={id} className="h-full w-auto transition-transform duration-500 group-hover:scale-110" />

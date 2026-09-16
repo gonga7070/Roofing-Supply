@@ -49,7 +49,7 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
           <img
             src={product.image}
             alt={product.name}
-            className="h-full w-full object-contain p-3 transition-transform duration-500 ease-out group-hover:scale-105"
+            className={`h-full w-full object-contain p-3 transition-transform duration-500 ease-out ${product.imageClass || "group-hover:scale-105"}`}
             data-testid={`product-image-${product.id}`}
           />
         ) : (

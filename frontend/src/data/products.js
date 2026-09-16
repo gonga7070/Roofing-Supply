@@ -62,6 +62,8 @@ export const PRODUCTS = [
     id: "scuppers",
     name: "Parapet Thru-Wall & Overflow Scuppers",
     shortName: "Scuppers",
+    image: "/products/scupper.png",
+    imageClass: "scale-[1.45] group-hover:scale-[1.55]",
     category: "Perimeter",
     shortDesc:
       "Custom fabricated parapet wall outlets with welded collector boxes and drip edges for emergency drainage.",
