@@ -1,0 +1,381 @@
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform, useInView, animate, useMotionValue, useSpring } from "framer-motion";
+import { ArrowRight, ArrowUpRight, ShieldCheck, Ruler, Flame, FileCheck } from "lucide-react";
+import { useQuote } from "@/App";
+import { MaskLine, Reveal, SectionHead } from "@/components/Reveal";
+import SparkCanvas from "@/components/SparkCanvas";
+import Marquee from "@/components/Marquee";
+import ProductDiagram from "@/components/ProductDiagram";
+import { PRODUCTS, IMAGES } from "@/data/products";
+
+const MANIFESTO = [
+  {
+    n: "01",
+    title: "Zero Leaks",
+    body: "Every seam is TIG-welded, soldered, or continuous-locked before it leaves the floor. If water can find a path, we haven't done our job — so we build like the warranty is forever.",
+    icon: ShieldCheck,
+  },
+  {
+    n: "02",
+    title: "Heavy-Gauge Metals",
+    body: "16oz cold-rolled copper, 304 and 316 stainless, 14-gauge structural galvanized. We stock the alloys architects specify and refuse to down-gauge to win a bid.",
+    icon: Flame,
+  },
+  {
+    n: "03",
+    title: "CNC Precision",
+    body: "Brake-formed to a half-millimeter, laser-cut to the line, checked against the shop drawing twice. Field-fit problems are solved here, not on your roof.",
+    icon: Ruler,
+  },
+  {
+    n: "04",
+    title: "Architect-Specified",
+    body: "ANSI/SPRI ES-1 certified edge metal, SMACNA-standard profiles, ASTM traceable alloys. Our submittal packages pass review the first time.",
+    icon: FileCheck,
+  },
+];
+
+const Counter = ({ to, decimals = 0, suffix = "" }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const [val, setVal] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(0, to, {
+      duration: 1.9,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (v) => setVal(v),
+    });
+    return () => controls.stop();
+  }, [inView, to]);
+  return (
+    <span ref={ref} className="tabular-nums">
+      {val.toFixed(decimals)}
+      {suffix}
+    </span>
+  );
+};
+
+const Hero = () => {
+  const { openQuote } = useQuote();
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+  const fade = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const titleY = useTransform(scrollYProgress, [0, 1], [0, -110]);
+
+  const rx = useMotionValue(0);
+  const ry = useMotionValue(0);
+  const srx = useSpring(rx, { stiffness: 120, damping: 18 });
+  const sry = useSpring(ry, { stiffness: 120, damping: 18 });
+
+  const onTilt = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    ry.set(((e.clientX - r.left) / r.width - 0.5) * 10);
+    rx.set(-((e.clientY - r.top) / r.height - 0.5) * 10);
+  };
+  const resetTilt = () => {
+    rx.set(0);
+    ry.set(0);
+  };
+
+  return (
+    <section ref={sectionRef} className="relative flex min-h-screen flex-col overflow-hidden" data-testid="hero-section">
+      <motion.div style={{ y: bgY }} className="absolute inset-0 scale-110" aria-hidden="true">
+        <img src={IMAGES.hero} alt="" className="h-full w-full object-cover opacity-35 saturate-[0.6]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/55 to-ink" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-transparent to-ink/40" />
+      </motion.div>
+      <div className="blueprint-grid absolute inset-0" aria-hidden="true" />
+      <SparkCanvas density={36} />
+
+      <motion.div
+        style={{ opacity: fade, y: titleY }}
+        className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-5 pt-36 pb-24 sm:px-8 lg:pt-40"
+      >
+        <div className="grid items-center gap-14 lg:grid-cols-12">
+          <div className="lg:col-span-8">
+            <MaskLine delay={0.15}>
+              <span className="inline-flex items-center gap-3 border border-linehi bg-panel/70 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.3em] text-steel backdrop-blur sm:text-xs">
+                <span className="h-1.5 w-1.5 animate-pulse bg-forge" aria-hidden="true" />
+                Commercial Roofing Fabrications — Est. 1998
+              </span>
+            </MaskLine>
+
+            <h1 className="mt-8 font-head text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-slate-100 sm:text-7xl lg:text-8xl">
+              <MaskLine delay={0.3}>Flat Roofs.</MaskLine>
+              <MaskLine delay={0.42}>
+                <span className="text-forge">Heavy Metal.</span>
+              </MaskLine>
+              <MaskLine delay={0.54}>Zero Leaks.</MaskLine>
+            </h1>
+
+            <Reveal delay={0.75} className="mt-8 max-w-xl">
+              <p className="text-base leading-relaxed text-slate-400 sm:text-lg">
+                We manufacture the drainage and edge-metal components that keep commercial flat
+                roofs watertight — roof drains, scuppers, curbs, flashing and more, brake-formed
+                and TIG-welded in Chicago.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.9} className="mt-10 flex flex-wrap items-center gap-4">
+              <button
+                type="button"
+                data-testid="hero-cta-quote-button"
+                onClick={() => openQuote()}
+                className="group flex items-center gap-3 border border-forge bg-forge px-8 py-4 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-ink transition-colors duration-200 hover:bg-transparent hover:text-forge"
+              >
+                Request A Quote
+                <ArrowUpRight size={15} strokeWidth={2} className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </button>
+              <Link
+                to="/products"
+                data-testid="hero-cta-catalog-button"
+                className="group flex items-center gap-3 border border-linehi px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] text-slate-200 transition-colors duration-200 hover:border-steel hover:text-steel"
+              >
+                Browse The Catalog
+                <ArrowRight size={15} strokeWidth={2} className="transition-transform duration-200 group-hover:translate-x-1" />
+              </Link>
+            </Reveal>
+          </div>
+
+          <div className="hidden lg:col-span-4 lg:block">
+            <Reveal delay={1.05}>
+              <div style={{ perspective: 900 }}>
+                <motion.div
+                  onMouseMove={onTilt}
+                  onMouseLeave={resetTilt}
+                  style={{ rotateX: srx, rotateY: sry, transformStyle: "preserve-3d" }}
+                  className="corner-frame spotlight-card relative border border-linehi"
+                  data-testid="hero-feature-frame"
+                >
+                  <img
+                    src={IMAGES.welding}
+                    alt="TIG welding stainless roof drain flange in the ForgeLine shop"
+                    className="h-[420px] w-full object-cover saturate-[0.75]"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 border-t border-linehi bg-ink/85 px-4 py-3 backdrop-blur">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-steel">
+                      Weld Cell 04 — 304 Stainless
+                    </p>
+                    <p className="font-mono text-[10px] tracking-[0.25em] text-slate-500">
+                      TOLERANCE ±0.5MM / PASS
+                    </p>
+                  </div>
+                  <span className="absolute -left-px -top-px h-5 w-5 border-l-2 border-t-2 border-forge" aria-hidden="true" />
+                  <span className="absolute -right-px -top-px h-5 w-5 border-r-2 border-t-2 border-forge" aria-hidden="true" />
+                </motion.div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div style={{ opacity: fade }} className="relative z-10 border-t border-line/70">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-8">
+          <span className="font-mono text-[10px] tracking-[0.3em] text-slate-500">41.8781° N / 87.6298° W</span>
+          <span className="hidden h-8 w-px origin-top animate-scroll-pulse bg-forge sm:block" aria-hidden="true" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-slate-500">Scroll — 001</span>
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+const Manifesto = () => (
+  <section id="manifesto" className="relative border-b border-line" data-testid="manifesto-section">
+    <div className="mx-auto max-w-[1440px] px-5 py-24 sm:px-8 sm:py-32">
+      <SectionHead index="001" eyebrow="The ForgeLine Standard" title="Built Like The Roof Depends On It." />
+      <div className="mt-16 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4">
+        {MANIFESTO.map((m, i) => (
+          <Reveal key={m.n} delay={i * 0.12}>
+            <div
+              className="group relative h-full border-b border-r border-line bg-panel/30 p-8 transition-colors duration-300 hover:bg-panel"
+              data-testid={`manifesto-chapter-${m.n}`}
+            >
+              <span className="absolute left-0 top-0 h-0 w-[3px] bg-forge transition-all duration-500 ease-out group-hover:h-full" aria-hidden="true" />
+              <div className="flex items-start justify-between">
+                <span className="font-head text-6xl font-extrabold text-line transition-colors duration-300 group-hover:text-forge/25">
+                  {m.n}
+                </span>
+                <m.icon size={22} strokeWidth={1.5} className="mt-2 text-slate-500 transition-colors duration-300 group-hover:text-forge" />
+              </div>
+              <h3 className="mt-6 font-head text-2xl font-bold uppercase tracking-tight text-slate-100">
+                {m.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-400">{m.body}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const ShopFloor = () => (
+  <section className="relative border-b border-line bg-panel/30" data-testid="shopfloor-section">
+    <div className="blueprint-grid-fine absolute inset-0" aria-hidden="true" />
+    <div className="relative mx-auto max-w-[1440px] px-5 py-24 sm:px-8 sm:py-32">
+      <SectionHead index="002" eyebrow="Inside The Plant" title="Cut. Brake. Weld. Ship." />
+      <div className="mt-16 grid gap-6 lg:grid-cols-2">
+        {[
+          {
+            img: IMAGES.laser,
+            label: "Fiber Laser — 4KW",
+            sub: "Nesting tolerance 0.1mm across 10ft sheets",
+            caption: "Every flange, dome ring, and collector box starts as a nested laser program. Nothing is sheared by eye.",
+          },
+          {
+            img: IMAGES.plant,
+            label: "Fab Line — Bays 01–06",
+            sub: "Brake forming / rolling / TIG & MIG stations",
+            caption: "Six fabrication bays run copper, stainless, and galvanized simultaneously, so mixed-alloy orders ship on one truck.",
+          },
+        ].map((card, i) => (
+          <Reveal key={card.label} delay={i * 0.15}>
+            <figure className="corner-frame spotlight-card group relative overflow-hidden border border-line" data-testid={`shopfloor-card-${i}`}>
+              <img
+                src={card.img}
+                alt={card.label}
+                className="h-[380px] w-full object-cover saturate-[0.7] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" aria-hidden="true" />
+              <figcaption className="absolute inset-x-0 bottom-0 p-6">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-forge">{card.label}</p>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-steel">{card.sub}</p>
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-300">{card.caption}</p>
+              </figcaption>
+            </figure>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const Stats = () => (
+  <section className="border-b border-line" data-testid="stats-section">
+    <div className="mx-auto grid max-w-[1440px] grid-cols-2 lg:grid-cols-4">
+      {[
+        { v: 27, suffix: "", label: "Years Fabricating", d: 0 },
+        { v: 2.4, suffix: "M", label: "Lbs Of Metal Shipped / Yr", d: 1 },
+        { v: 48, suffix: "", label: "Hour Quote Turnaround", d: 0 },
+        { v: 0, suffix: "", label: "Leak Callbacks Since 2015", d: 0 },
+      ].map((s, i) => (
+        <div
+          key={s.label}
+          className={`border-line px-6 py-12 text-center sm:py-16 ${i % 2 === 1 ? "border-l" : ""} ${i >= 2 ? "border-t lg:border-t-0" : ""} ${i > 0 ? "lg:border-l" : ""}`}
+          data-testid={`stat-${i}`}
+        >
+          <p className="font-head text-5xl font-extrabold tracking-tight text-slate-100 sm:text-6xl">
+            <Counter to={s.v} decimals={s.d} suffix={s.suffix} />
+          </p>
+          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-steel">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+const ProductStrip = () => {
+  const featured = ["roof-drains", "scuppers", "roof-curbs", "custom-flashing"];
+  return (
+    <section className="border-b border-line" data-testid="product-strip-section">
+      <div className="mx-auto max-w-[1440px] px-5 py-24 sm:px-8 sm:py-32">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHead index="003" eyebrow="The Lineup" title="Eight Components. One Watertight Roof." />
+          <Reveal delay={0.2}>
+            <Link
+              to="/products"
+              data-testid="product-strip-view-all"
+              className="group flex items-center gap-2 border border-linehi px-6 py-3 font-mono text-xs uppercase tracking-[0.25em] text-slate-200 transition-colors hover:border-forge hover:text-forge"
+            >
+              Full Catalog
+              <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
+          </Reveal>
+        </div>
+        <div className="mt-16 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4">
+          {featured.map((id, i) => {
+            const p = PRODUCTS.find((x) => x.id === id);
+            return (
+              <Reveal key={id} delay={i * 0.1}>
+                <Link
+                  to={`/products?item=${id}`}
+                  data-testid={`featured-product-${id}`}
+                  className="group flex h-full flex-col border-b border-r border-line bg-panel/30 p-7 transition-colors duration-300 hover:bg-card"
+                >
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-forge">{p.tag}</span>
+                  <div className="my-6 flex h-28 items-center justify-center text-steel/70 transition-colors duration-300 group-hover:text-steel">
+                    <ProductDiagram productId={id} className="h-full w-auto transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <h3 className="font-head text-xl font-bold uppercase tracking-tight text-slate-100 transition-colors group-hover:text-forge">
+                    {p.shortName}
+                  </h3>
+                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-slate-500">{p.shortDesc}</p>
+                  <span className="mt-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500 transition-colors group-hover:text-steel">
+                    View Specs <ArrowUpRight size={12} />
+                  </span>
+                </Link>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const CtaBand = () => {
+  const { openQuote } = useQuote();
+  return (
+    <section className="relative overflow-hidden" data-testid="cta-band-section">
+      <SparkCanvas density={26} />
+      <div className="blueprint-grid absolute inset-0 opacity-60" aria-hidden="true" />
+      <div className="relative mx-auto max-w-[1440px] px-5 py-28 text-center sm:px-8 sm:py-36">
+        <Reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-steel">Specs In — Metal Out</p>
+        </Reveal>
+        <h2 className="mx-auto mt-6 max-w-4xl font-head text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-slate-100 sm:text-7xl">
+          <MaskLine delay={0.1}>Spec It.</MaskLine>
+          <MaskLine delay={0.22}>
+            <span className="text-forge">We Fabricate It.</span>
+          </MaskLine>
+        </h2>
+        <Reveal delay={0.35} className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <button
+            type="button"
+            data-testid="cta-band-quote-button"
+            onClick={() => openQuote()}
+            className="group flex items-center gap-3 border border-forge bg-forge px-9 py-4 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-ink transition-colors duration-200 hover:bg-transparent hover:text-forge"
+          >
+            Start A Quote
+            <ArrowUpRight size={15} strokeWidth={2} className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </button>
+          <Link
+            to="/contact"
+            data-testid="cta-band-contact-button"
+            className="font-mono text-xs uppercase tracking-[0.25em] text-slate-400 underline decoration-linehi underline-offset-8 transition-colors hover:text-steel hover:decoration-steel"
+          >
+            Talk To The Shop
+          </Link>
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <Marquee />
+      <Manifesto />
+      <ShopFloor />
+      <Stats />
+      <ProductStrip />
+      <CtaBand />
+    </>
+  );
+}

@@ -1,0 +1,209 @@
+{
+  "project_name": "ForgeLine Metals",
+  "archetype": "THE PERFORMANCE PRO / SWISS INDUSTRIAL BRUTALISM",
+  "brand_identity": {
+    "company_name": "ForgeLine Metals",
+    "tagline": "Architectural-Grade Heavy Metal Fabrications for Commercial Flat Roof Systems",
+    "tone": "Authoritative, Industrial, Precision-Engineered, Zero-Compromise",
+    "description": "ForgeLine Metals manufactures commercial-grade flat roof metal supplies including heavy-gauge copper, stainless steel, TPO/PVC coated metal, aluminum, and galvanized steel roof drains, drain cones, pitch pockets, sumps, scuppers, custom flashings, roof curbs, and metal sleeves."
+  },
+  "typography": {
+    "font_family_heading": "Barlow Condensed, Syne, Cabinet Grotesk, sans-serif",
+    "font_family_body": "Inter, DM Sans, sans-serif",
+    "font_family_mono": "JetBrains Mono, Fira Code, monospace",
+    "rules": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight font-extrabold font-heading text-slate-100",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl uppercase tracking-tight font-bold font-heading text-slate-100",
+      "h3_card": "text-xl sm:text-2xl font-bold font-heading text-slate-200",
+      "mono_labels": "text-xs font-mono uppercase tracking-[0.2em] text-orange-500",
+      "body_text": "text-base text-slate-400 leading-relaxed font-body",
+      "banned_fonts": ["Space Grotesk"]
+    }
+  },
+  "colors": {
+    "theme": "Dark Mode Industrial Slate with High-Vis Safety Orange Accent",
+    "background_primary": "#0A0E17",
+    "background_secondary": "#111827",
+    "background_card": "#161F30",
+    "border_color": "#1E293B",
+    "border_highlight": "#334155",
+    "text_primary": "#F8FAFC",
+    "text_secondary": "#94A3B8",
+    "accent_orange": "#FF5500",
+    "accent_orange_hover": "#E04800",
+    "accent_steel_blue": "#38BDF8",
+    "accent_steel_blue_muted": "#0284C7",
+    "status_success": "#22C55E",
+    "status_error": "#EF4444",
+    "rules": {
+      "forbidden_color": "#7351B7, #1B93A4",
+      "corners": "rounded-none across ALL containers, buttons, cards, inputs, and modals to maintain sharp industrial precision aesthetic"
+    }
+  },
+  "layout_and_spacing": {
+    "grid_system": "Swiss Architectural Grid with 1px border lines (border-collapse look)",
+    "hero_layout": "Kinetic full-screen dark hero with line-by-line reveal, technical grid background, animated coordinate specs, and prominent quick quote CTA",
+    "manifesto_layout": "Numbered Manifesto Chapters (01/ ZERO LEAKS, 02/ HEAVY-GAUGE METALS, 03/ CNC PRECISION, 04/ ARCHITECT-SPECIFIED)",
+    "marquee": "Slow Editorial Marquee using react-fast-marquee with raw gauge specs, metal alloys, and ASTM standard codes",
+    "product_catalog": "Grid of 8 commercial roof metal products with tab filters, spec tables, material selector, gauge specs, isometric technical diagram preview, and direct Request Quote modal trigger"
+  },
+  "products_specifications": [
+    {
+      "id": "roof-drains",
+      "name": "Heavy-Duty Cast Aluminum / Copper Roof Drains",
+      "category": "Drainage",
+      "short_desc": "Commercial primary roof drains with heavy cast metal domes, clamping collar, and seamless weld flange.",
+      "materials": ["Seamless Copper (16oz / 24oz)", "304 / 316 Stainless Steel", "Cast Aluminum"],
+      "gauges": "0.063\" - 0.125\" Metal Thickness / 16oz-24oz Copper",
+      "sizes": "3\", 4\", 6\", 8\" Outlet Pipe Diameters",
+      "finishes": "Mill Finish, TPO-Coated, PVC-Coated, Electropolished",
+      "astm_standards": "ASTM B370, ANSI/ASME A112.6.4",
+      "tag": "Architectural Priority"
+    },
+    {
+      "id": "drain-cones",
+      "name": "Precision Tapered Metal Drain Cones",
+      "category": "Drainage",
+      "short_desc": "Engineered sumped drain sleeves for smooth pitch transition and zero water accumulation around roof drains.",
+      "materials": ["Galvanized Steel", "Stainless Steel 304", "Heavy Aluminum 0.080\""],
+      "gauges": "18 Ga, 20 Ga, 22 Ga Galvanized / 0.080\" Alum",
+      "sizes": "18\"x18\", 24\"x24\", 36\"x36\" Sump Boxes (Custom drop depths)",
+      "finishes": "Raw Mill, Hot-Dip Galvanized, TPO/PVC Bonded",
+      "astm_standards": "ASTM A653, ASTM A240",
+      "tag": "High-Flow Design"
+    },
+    {
+      "id": "pitch-pockets",
+      "name": "Heavy-Gauge Fabricated Pitch Pockets",
+      "category": "Penetrations",
+      "short_desc": "Flanged penetration seal boxes designed for single & multi-conduit roof penetrations poured with sealant.",
+      "materials": ["Copper", "Stainless Steel", "Galvanized Steel", "TPO-Coated Metal"],
+      "gauges": "24 Ga Galvanized / 16oz Copper / 24 Ga SS",
+      "sizes": "4\"x4\" up to 24\"x24\" Base Flange; Heights 4\", 6\", 8\"",
+      "finishes": "Soldered Seams, TIG Welded, TPO Coated",
+      "astm_standards": "ASTM B209, NRCA Commercial Standard",
+      "tag": "Watertight Seal"
+    },
+    {
+      "id": "roof-sumps",
+      "name": "Recessed Commercial Roof Sump Pans",
+      "category": "Drainage",
+      "short_desc": "Double & single drain recessed steel sump pans engineered for drop-in placement between joists.",
+      "materials": ["14 Gauge Cold-Rolled Steel", "Stainless Steel 304", "Galvanized Heavy Steel"],
+      "gauges": "14 Ga (0.075\"), 16 Ga (0.060\") Heavy Structural",
+      "sizes": "30\"x30\" Single Sump, 30\"x60\" Double Sump Pan",
+      "finishes": "Primer Coated, Stainless Steel 2B, Galvanized",
+      "astm_standards": "ASTM A1008 structural grade",
+      "tag": "Structural Heavy"
+    },
+    {
+      "id": "scuppers",
+      "name": "Parapet Thru-Wall & Overflow Scuppers",
+      "category": "Perimeter",
+      "short_desc": "Custom fabricated parapet wall outlets with welded collector boxes and drip edges for emergency drainage.",
+      "materials": ["304 Stainless Steel", "16oz / 20oz Cold-Rolled Copper", "TPO / PVC Coated Metal"],
+      "gauges": "24 Ga Stainless / 20oz Copper / 0.063\" Aluminum",
+      "sizes": "Standard 4\"x6\", 6\"x8\", 8\"x12\", Custom Parapet Depths up to 24\"",
+      "finishes": "Continuous Welded Seams, Soldered Copper, Powder Coated",
+      "astm_standards": "SMACNA Architectural Sheet Metal Manual",
+      "tag": "Parapet Essential"
+    },
+    {
+      "id": "custom-flashing",
+      "name": "Architectural Parapet & Gravel Stop Flashing",
+      "category": "Perimeter",
+      "short_desc": "CNC break-formed perimeter cope caps, edge metal, fascia extensions, and counter flashings.",
+      "materials": ["Kynar 500 pre-finished Steel", "Aluminum 0.040\"-0.080\"", "Copper", "Stainless Steel"],
+      "gauges": "22 Ga / 24 Ga Kynar Steel; 0.050\" Aluminum",
+      "sizes": "10ft Standard Lengths; Custom Profile Bends",
+      "finishes": "30+ Kynar 500 Architectural Colors, Anodized, Mill",
+      "astm_standards": "ANSI/SPRI ES-1 Tested & Certified",
+      "tag": "ES-1 Certified"
+    },
+    {
+      "id": "roof-curbs",
+      "name": "Structural HVAC & Skylight Roof Curbs",
+      "category": "Structural",
+      "short_desc": "Heavy-duty insulated structural roof curbs built for heavy rooftop units, fans, skylights, and hatches.",
+      "materials": ["18 Ga / 14 Ga Galvanized Steel", "Aluminum 0.080\""],
+      "gauges": "14 Ga Structural Heavy Steel (3/16\" reinforced corners)",
+      "sizes": "12\", 18\", 24\" Height; Base sizes to match equipment (up to 120\" length)",
+      "finishes": "Factory Insulated (1.5\" rigid fiberglass), Pressure Welded",
+      "astm_standards": "NRCA & SMACNA Standards",
+      "tag": "Load Rated"
+    },
+    {
+      "id": "metal-sleeves",
+      "name": "Pipe & Vent Penetration Sleeves with Umbrella Collars",
+      "category": "Penetrations",
+      "short_desc": "TIG welded stainless & galvanized pipe sleeves complete with draw-band storm collars for severe weather protection.",
+      "materials": ["Stainless Steel 304/316", "Galvanized Steel", "Heavy Copper"],
+      "gauges": "20 Ga Stainless / 18 Ga Galvanized",
+      "sizes": "2\" to 12\" Pipe Diameters; 12\" to 24\" Sleeve Height",
+      "finishes": "Smooth TIG Welded, Stainless Polished, TPO-Bonded Flange",
+      "astm_standards": "ASTM A240 / SMACNA",
+      "tag": "Weatherproof"
+    }
+  ],
+  "image_urls": {
+    "hero_background": "https://images.unsplash.com/photo-1593106410288-caf65eca7c9d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHw0fHxtZXRhbCUyMHNoZWV0JTIwd2VsZGluZyUyMHN0ZWVsJTIwbWFudWZhY3R1cmluZyUyMGZhY3RvcnklMjBwcmVjaXNpb24lMjBjb21wb25lbnRzfGVufDB8fHx8MTc4OTUyNTU0N3ww&ixlib=rb-4.1.0&q=85",
+    "factory_welding": "https://images.unsplash.com/photo-1698664683348-f9f35b809821?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwzfHxtZXRhbCUyMHNoZWV0JTIwd2VsZGluZyUyMHN0ZWVsJTIwbWFudWZhY3R1cmluZyUyMGZhY3RvcnklMjBwcmVjaXNpb24lMjBjb21wb25lbnRzfGVufDB8fHx8MTc4OTUyNTU0N3ww&ixlib=rb-4.1.0&q=85",
+    "laser_cutting": "https://images.unsplash.com/photo-1598302936625-6075fbd98dd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxtZXRhbCUyMHNoZWV0JTIwd2VsZGluZyUyMHN0ZWVsJTIwbWFudWZhY3R1cmluZyUyMGZhY3RvcnklMjBwcmVjaXNpb24lMjBjb21wb25lbnRzfGVufDB8fHx8MTc4OTUyNTU0N3ww&ixlib=rb-4.1.0&q=85",
+    "commercial_roofing_structure": "https://images.pexels.com/photos/19408308/pexels-photo-19408308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "industrial_plant": "https://images.unsplash.com/photo-1547895749-888a559fc2a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwzfHxpbmR1c3RyaWFsJTIwY29tbWVyY2lhbCUyMHJvb2ZpbmclMjBtZXRhbCUyMHNoZWV0JTIwZmFicmljYXRpb24lMjBzdGVlbCUyMGZhY3RvcnklMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzg5NTI1NTQxfDA&ixlib=rb-4.1.0&q=85",
+    "sheet_metal_texture": "https://images.unsplash.com/photo-1602064828974-fcac67d33f4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwyfHxpbmR1c3RyaWFsJTIwY29tbWVyY2lhbCUyMHJvb2ZpbmclMjBtZXRhbCUyMHNoZWV0JTIwZmFicmljYXRpb24lMjBzdGVlbCUyMGZhY3RvcnklMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzg5NTI1NTQxfDA&ixlib=rb-4.1.0&q=85"
+  },
+  "interactive_components_and_motion": {
+    "lenis": "Wrap entire layout in Lenis smooth scroll provider for momentum scrolling",
+    "framer_motion": {
+      "kinetic_hero_reveal": "Text masked line-by-line reveal with initial Y offset (+100%) to 0 with duration 0.8s and staggered delay per line",
+      "manifesto_scroll_trigger": "Staggered reveal of numbered manifesto blocks with border hover animation in safety orange",
+      "product_card_hover": "3D subtle tilt / border illumination effect on product hover with sharp outer highlight frame",
+      "modal_animation": "Sharp slide-up quote modal overlay with backdrop blur 16px and deep slate border"
+    },
+    "particle_canvas": "Subtle background interactive canvas depicting floating sparks / laser cut dust particles with orange-blue glow in Hero and CTA sections"
+  },
+  "backend_integration": {
+    "endpoint": "POST /api/quote-request",
+    "fields": [
+      "company_name",
+      "contact_name",
+      "email",
+      "phone",
+      "project_type (e.g., Commercial New Construction, Roof Replacement, Industrial Maintenance)",
+      "products_selected (Array of selected product IDs/names)",
+      "estimated_quantities",
+      "specifications_notes"
+    ],
+    "features": [
+      "Persists quote submission to SQLite/JSON database",
+      "Sends instant confirmation email notification via Resend / Emergent Mail service",
+      "Returns structured JSON confirmation response with custom Quote reference code (e.g. FGM-2026-8942)"
+    ]
+  },
+  "testing_and_data_testids": {
+    "nav_logo": "data-testid=\"nav-logo\"",
+    "nav_products_link": "data-testid=\"nav-products-link\"",
+    "nav_manifesto_link": "data-testid=\"nav-manifesto-link\"",
+    "nav_contact_link": "data-testid=\"nav-contact-link\"",
+    "nav_quote_btn": "data-testid=\"nav-request-quote-button\"",
+    "hero_cta_quote": "data-testid=\"hero-cta-quote-button\"",
+    "hero_cta_catalog": "data-testid=\"hero-cta-catalog-button\"",
+    "product_card": "data-testid=\"product-card-{id}\"",
+    "product_quote_btn": "data-testid=\"product-quote-btn-{id}\"",
+    "product_specs_btn": "data-testid=\"product-specs-btn-{id}\"",
+    "quote_modal": "data-testid=\"quote-modal\"",
+    "quote_modal_close": "data-testid=\"quote-modal-close-button\"",
+    "quote_form_submit": "data-testid=\"quote-form-submit-button\"",
+    "contact_form": "data-testid=\"contact-quote-form\"",
+    "contact_form_submit": "data-testid=\"contact-form-submit-button\"",
+    "toast_notification": "data-testid=\"toast-notification\""
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow sharp-edge design (rounded-none on all buttons, inputs, cards, borders).",
+    "Build 3 core pages / views accessible via seamless SPA navigation: Home (Kinetic Hero, Manifesto, Feature Showcase, Editorial Marquee, Technical Stats), Products Catalog (All 8 components with filter by category, material specs, interactive spec drawer, and request quote trigger), and Contact / RFQ Page (Full commercial request for quotation form connected to FastAPI POST /api/quote-request).",
+    "Use Lucide-React or Phosphor Icons with crisp 1.5px stroke width.",
+    "Include high-contrast state transitions (hover, active, focus) with explicit hover text colors.",
+    "Ensure all data-testid attributes are cleanly placed on interactive elements for reliable automated testing."
+  ]
+}

@@ -1,0 +1,73 @@
+import { useEffect, useRef, createContext, useContext, useState, useCallback } from "react";
+import "@/App.css";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Lenis from "lenis";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import QuoteModal from "@/components/QuoteModal";
+import Home from "@/pages/Home";
+import Products from "@/pages/Products";
+import Contact from "@/pages/Contact";
+
+const QuoteContext = createContext({ openQuote: () => {} });
+export const useQuote = () => useContext(QuoteContext);
+
+const ScrollManager = ({ lenisRef }) => {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const t = setTimeout(() => lenisRef.current?.scrollTo(hash, { offset: -72 }), 120);
+      return () => clearTimeout(t);
+    }
+    lenisRef.current?.scrollTo(0, { immediate: true });
+    window.scrollTo(0, 0);
+  }, [pathname, hash, lenisRef]);
+  return null;
+};
+
+function App() {
+  const lenisRef = useRef(null);
+  const [quote, setQuote] = useState({ open: false, product: null });
+  const openQuote = useCallback((product = null) => setQuote({ open: true, product }), []);
+  const closeQuote = useCallback(() => setQuote((s) => ({ ...s, open: false })), []);
+
+  useEffect(() => {
+    const lenis = new Lenis({ lerp: 0.09 });
+    lenisRef.current = lenis;
+    window.__lenis = lenis;
+    let raf;
+    const loop = (time) => {
+      lenis.raf(time);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => {
+      cancelAnimationFrame(raf);
+      lenis.destroy();
+      window.__lenis = null;
+    };
+  }, []);
+
+  return (
+    <QuoteContext.Provider value={{ openQuote }}>
+      <BrowserRouter>
+        <ScrollManager lenisRef={lenisRef} />
+        <div className="App min-h-screen bg-ink font-body text-slate-100">
+          <div className="noise-overlay" aria-hidden="true" />
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer />
+          <QuoteModal open={quote.open} product={quote.product} onClose={closeQuote} />
+        </div>
+      </BrowserRouter>
+    </QuoteContext.Provider>
+  );
+}
+
+export default App;
