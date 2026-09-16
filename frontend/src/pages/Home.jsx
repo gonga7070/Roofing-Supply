@@ -128,14 +128,6 @@ const Hero = () => {
                     alt="TIG welding stainless roof drain flange in the ForgeLine shop"
                     className="h-[420px] w-full object-cover saturate-[0.75]"
                   />
-                  <div className="absolute inset-x-0 bottom-0 border-t border-linehi bg-ink/85 px-4 py-3 backdrop-blur">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-steel">
-                      Weld Cell 04 — 304 Stainless
-                    </p>
-                    <p className="font-mono text-[10px] tracking-[0.25em] text-slate-500">
-                      TOLERANCE ±0.5MM / PASS
-                    </p>
-                  </div>
                   <span className="absolute -left-px -top-px h-5 w-5 border-l-2 border-t-2 border-forge" aria-hidden="true" />
                   <span className="absolute -right-px -top-px h-5 w-5 border-r-2 border-t-2 border-forge" aria-hidden="true" />
                 </motion.div>
