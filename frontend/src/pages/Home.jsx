@@ -219,7 +219,7 @@ const ProductStrip = () => {
     <section className="border-b border-line" data-testid="product-strip-section">
       <div className="mx-auto max-w-[1440px] px-5 py-24 sm:px-8 sm:py-32">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHead index="002" eyebrow="The Lineup" title="Seven Components. One Watertight Roof." />
+          <SectionHead index="002" eyebrow="The Lineup" title="Ten Components. One Watertight Roof." />
           <Reveal delay={0.2}>
             <Link
               to="/products"
