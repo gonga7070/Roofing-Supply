@@ -87,7 +87,7 @@ const Hero = () => {
             <Reveal delay={0.75} className="mt-6 max-w-xl">
               <p className="text-base leading-relaxed text-slate-400 sm:text-lg">
                 We manufacture the drainage and edge-metal components that keep commercial flat
-                roofs watertight — roof drains, scuppers, curbs, stack jacks and more, brake-formed
+                roofs watertight — roof drains, scuppers, cones, stack jacks and more, brake-formed
                 and TIG-welded in Chicago.
               </p>
             </Reveal>
@@ -214,12 +214,12 @@ const Stats = () => (
 );
 
 const ProductStrip = () => {
-  const featured = ["roof-drains", "scuppers", "roof-curbs", "stack-jacks"];
+  const featured = ["roof-drains", "scuppers", "chimney-caps", "stack-jacks"];
   return (
     <section className="border-b border-line" data-testid="product-strip-section">
       <div className="mx-auto max-w-[1440px] px-5 py-24 sm:px-8 sm:py-32">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHead index="002" eyebrow="The Lineup" title="Ten Components. One Watertight Roof." />
+          <SectionHead index="002" eyebrow="The Lineup" title="Six Components. One Watertight Roof." />
           <Reveal delay={0.2}>
             <Link
               to="/products"

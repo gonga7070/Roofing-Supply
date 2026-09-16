@@ -1,4 +1,4 @@
-export const CATEGORIES = ["All", "Drainage", "Penetrations", "Perimeter", "Structural"];
+export const CATEGORIES = ["All", "Drainage", "Penetrations", "Perimeter"];
 
 export const PRODUCTS = [
   {
@@ -17,20 +17,6 @@ export const PRODUCTS = [
     tag: "Architectural Priority",
   },
   {
-    id: "drain-cones",
-    name: "Precision Tapered Metal Drain Cones",
-    shortName: "Drain Cones",
-    category: "Drainage",
-    shortDesc:
-      "Engineered sumped drain sleeves for smooth pitch transition and zero water accumulation around roof drains.",
-    materials: ["Galvanized Steel", "Stainless Steel 304", 'Heavy Aluminum 0.080"'],
-    gauges: '18 Ga, 20 Ga, 22 Ga Galvanized / 0.080" Alum',
-    sizes: '18"x18", 24"x24", 36"x36" Sump Boxes (Custom drop depths)',
-    finishes: "Raw Mill, Hot-Dip Galvanized, TPO/PVC Bonded",
-    astm: "ASTM A653, ASTM A240",
-    tag: "High-Flow Design",
-  },
-  {
     id: "roof-cones",
     name: "Spun Aluminum Roofing Cones",
     shortName: "Roof Cones",
@@ -45,20 +31,6 @@ export const PRODUCTS = [
     finishes: "Mill Finish, TPO/PVC Bonded Base, Soldered Seams",
     astm: "ASTM B209, SMACNA Architectural",
     tag: "Spun One-Piece",
-  },
-  {
-    id: "pitch-pockets",
-    name: "Heavy-Gauge Fabricated Pitch Pockets",
-    shortName: "Pitch Pockets",
-    category: "Penetrations",
-    shortDesc:
-      "Flanged penetration seal boxes designed for single & multi-conduit roof penetrations poured with sealant.",
-    materials: ["Copper", "Stainless Steel", "Galvanized Steel", "TPO-Coated Metal"],
-    gauges: "24 Ga Galvanized / 16oz Copper / 24 Ga SS",
-    sizes: '4"x4" up to 24"x24" Base Flange; Heights 4", 6", 8"',
-    finishes: "Soldered Seams, TIG Welded, TPO Coated",
-    astm: "ASTM B209, NRCA Commercial Standard",
-    tag: "Watertight Seal",
   },
   {
     id: "stack-jacks",
@@ -93,20 +65,6 @@ export const PRODUCTS = [
     tag: "Parapet Essential",
   },
   {
-    id: "roof-curbs",
-    name: "Structural HVAC & Skylight Roof Curbs",
-    shortName: "Roof Curbs",
-    category: "Structural",
-    shortDesc:
-      "Heavy-duty insulated structural roof curbs built for heavy rooftop units, fans, skylights, and hatches.",
-    materials: ["18 Ga / 14 Ga Galvanized Steel", 'Aluminum 0.080"'],
-    gauges: '14 Ga Structural Heavy Steel (3/16" reinforced corners)',
-    sizes: '12", 18", 24" Height; Base sizes to match equipment (up to 120" length)',
-    finishes: 'Factory Insulated (1.5" rigid fiberglass), Pressure Welded',
-    astm: "NRCA & SMACNA Standards",
-    tag: "Load Rated",
-  },
-  {
     id: "rain-collars",
     name: "Rain Collars with Draw Bands",
     shortName: "Rain Collar",
@@ -136,20 +94,6 @@ export const PRODUCTS = [
     finishes: "Mill Finish, Stainless Polished, Powder Coated Black",
     astm: "ASTM A653, SMACNA Architectural",
     tag: "Spark Screened",
-  },
-  {
-    id: "metal-sleeves",
-    name: "Pipe & Vent Penetration Sleeves with Umbrella Collars",
-    shortName: "Metal Sleeves",
-    category: "Penetrations",
-    shortDesc:
-      "TIG welded stainless & galvanized pipe sleeves complete with draw-band storm collars for severe weather protection.",
-    materials: ["Stainless Steel 304/316", "Galvanized Steel", "Heavy Copper"],
-    gauges: "20 Ga Stainless / 18 Ga Galvanized",
-    sizes: '2" to 12" Pipe Diameters; 12" to 24" Sleeve Height',
-    finishes: "Smooth TIG Welded, Stainless Polished, TPO-Bonded Flange",
-    astm: "ASTM A240 / SMACNA",
-    tag: "Weatherproof",
   },
 ];
 
