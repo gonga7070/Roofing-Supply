@@ -92,7 +92,7 @@ const Hero = () => {
 
       <motion.div
         style={{ opacity: fade, y: titleY }}
-        className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-5 pt-36 pb-24 sm:px-8 lg:pt-40"
+        className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-5 pb-16 pt-28 sm:px-8 lg:pt-32"
       >
         <div className="grid items-center gap-14 lg:grid-cols-12">
           <div className="lg:col-span-8">
@@ -103,7 +103,7 @@ const Hero = () => {
               </span>
             </MaskLine>
 
-            <h1 className="mt-8 font-head text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-slate-100 sm:text-7xl lg:text-8xl">
+            <h1 className="mt-7 font-head text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-slate-100 sm:text-6xl lg:text-7xl">
               <MaskLine delay={0.3}>Built for the elements.</MaskLine>
               <MaskLine delay={0.42}>
                 <span className="text-forge">Engineered for performance.</span>
@@ -111,7 +111,7 @@ const Hero = () => {
               <MaskLine delay={0.54}>Made to last.</MaskLine>
             </h1>
 
-            <Reveal delay={0.75} className="mt-8 max-w-xl">
+            <Reveal delay={0.75} className="mt-6 max-w-xl">
               <p className="text-base leading-relaxed text-slate-400 sm:text-lg">
                 We manufacture the drainage and edge-metal components that keep commercial flat
                 roofs watertight — roof drains, scuppers, curbs, flashing and more, brake-formed
@@ -119,7 +119,7 @@ const Hero = () => {
               </p>
             </Reveal>
 
-            <Reveal delay={0.9} className="mt-10 flex flex-wrap items-center gap-4">
+            <Reveal delay={0.9} className="mt-8 flex flex-wrap items-center gap-4">
               <button
                 type="button"
                 data-testid="hero-cta-quote-button"
