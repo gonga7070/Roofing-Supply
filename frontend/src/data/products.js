@@ -48,6 +48,8 @@ export const PRODUCTS = [
     id: "stack-jacks",
     name: "Spun Aluminum & Copper Stack Jacks",
     shortName: "Stack Jacks",
+    image: "/products/stack-jack.png",
+    imageClass: "scale-[1.3] group-hover:scale-[1.4]",
     category: "Penetrations",
     shortDesc:
       "One-piece spun vent pipe flashings with welded base flanges and storm collars for plumbing stack penetrations.",
