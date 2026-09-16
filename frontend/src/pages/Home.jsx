@@ -104,11 +104,11 @@ const Hero = () => {
             </MaskLine>
 
             <h1 className="mt-8 font-head text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-slate-100 sm:text-7xl lg:text-8xl">
-              <MaskLine delay={0.3}>Flat Roofs.</MaskLine>
+              <MaskLine delay={0.3}>Built for the elements.</MaskLine>
               <MaskLine delay={0.42}>
-                <span className="text-forge">Heavy Metal.</span>
+                <span className="text-forge">Engineered for performance.</span>
               </MaskLine>
-              <MaskLine delay={0.54}>Zero Leaks.</MaskLine>
+              <MaskLine delay={0.54}>Made to last.</MaskLine>
             </h1>
 
             <Reveal delay={0.75} className="mt-8 max-w-xl">

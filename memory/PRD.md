@@ -14,6 +14,7 @@ Build a 10/10 dark-mode website for a manufacturer of metal commercial roofing s
 - DB: MongoDB `quote_requests` collection (reference code FGM-YYYY-####, status, created_at).
 
 ## Implemented (2026-09-16)
+- Theme re-skinned to black / racing-red (#E10600) / white accents; hero headline changed to "Built for the elements. Engineered for performance. Made to last."
 - Kinetic hero: masked line-by-line title reveal, parallax background photo, blueprint grid, floating spark particles, mouse-tilt 3D photo frame, coordinate/scroll ticker
 - Numbered manifesto (01 Zero Leaks → 04 Architect-Specified), slow editorial spec marquee, shop-floor photo showcase with corner-frame hover, animated stat counters, featured product strip, CTA band
 - Products page: 8 products with SVG technical diagrams, category filter tabs, spotlight hover, expandable spec sheets (materials/gauges/sizes/finishes/ASTM), per-product quote trigger with preselect

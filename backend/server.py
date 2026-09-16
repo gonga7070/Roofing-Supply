@@ -157,7 +157,7 @@ def _row(label: str, value: str) -> str:
         f'<tr><td style="padding:8px 12px;border:1px solid #d7dde8;font-family:Arial,sans-serif;'
         f'font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#5a6478;width:170px">{label}</td>'
         f'<td style="padding:8px 12px;border:1px solid #d7dde8;font-family:Arial,sans-serif;'
-        f'font-size:13px;color:#0a0e17">{escape(value) if value else "&mdash;"}</td></tr>'
+        f'font-size:13px;color:#060606">{escape(value) if value else "&mdash;"}</td></tr>'
     )
 
 
@@ -176,8 +176,8 @@ def _owner_html(q: QuoteRequestCreate, ref: str) -> str:
     )
     return (
         '<table role="presentation" width="100%" cellpadding="0" cellspacing="0">'
-        '<tr><td style="padding:24px;font-family:Arial,sans-serif;background:#0a0e17">'
-        '<p style="margin:0;font-size:11px;letter-spacing:0.25em;color:#ff5500;text-transform:uppercase">ForgeLine Metals — RFQ Intake</p>'
+        '<tr><td style="padding:24px;font-family:Arial,sans-serif;background:#060606">'
+        '<p style="margin:0;font-size:11px;letter-spacing:0.25em;color:#e10600;text-transform:uppercase">ForgeLine Metals — RFQ Intake</p>'
         f'<h1 style="margin:8px 0 0;font-size:20px;color:#f8fafc">New quote request {escape(ref)}</h1>'
         '</td></tr>'
         f'<tr><td style="padding:24px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse">{rows}</table></td></tr>'
@@ -190,8 +190,8 @@ def _customer_html(q: QuoteRequestCreate, ref: str) -> str:
     products = ", ".join(q.products_selected)
     return (
         '<table role="presentation" width="100%" cellpadding="0" cellspacing="0">'
-        '<tr><td style="padding:24px;font-family:Arial,sans-serif;background:#0a0e17">'
-        '<p style="margin:0;font-size:11px;letter-spacing:0.25em;color:#ff5500;text-transform:uppercase">ForgeLine Metals</p>'
+        '<tr><td style="padding:24px;font-family:Arial,sans-serif;background:#060606">'
+        '<p style="margin:0;font-size:11px;letter-spacing:0.25em;color:#e10600;text-transform:uppercase">ForgeLine Metals</p>'
         '<h1 style="margin:8px 0 0;font-size:20px;color:#f8fafc">Your quote request is in the shop queue</h1>'
         '</td></tr>'
         '<tr><td style="padding:24px;font-family:Arial,sans-serif;font-size:14px;color:#1a2233;line-height:1.6">'
