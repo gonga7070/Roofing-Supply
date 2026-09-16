@@ -1,10 +1,9 @@
-import { useEffect, useRef, createContext, useContext, useState, useCallback } from "react";
+import { useEffect, useRef, createContext, useContext, useCallback } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Lenis from "lenis";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import QuoteModal from "@/components/QuoteModal";
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
 import Contact from "@/pages/Contact";
@@ -25,11 +24,30 @@ const ScrollManager = ({ lenisRef }) => {
   return null;
 };
 
+const Shell = ({ lenisRef }) => {
+  const navigate = useNavigate();
+  const openQuote = useCallback(() => navigate("/contact"), [navigate]);
+  return (
+    <QuoteContext.Provider value={{ openQuote }}>
+      <ScrollManager lenisRef={lenisRef} />
+      <div className="App min-h-screen bg-ink font-body text-slate-100">
+        <div className="noise-overlay" aria-hidden="true" />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </QuoteContext.Provider>
+  );
+};
+
 function App() {
   const lenisRef = useRef(null);
-  const [quote, setQuote] = useState({ open: false, product: null });
-  const openQuote = useCallback((product = null) => setQuote({ open: true, product }), []);
-  const closeQuote = useCallback(() => setQuote((s) => ({ ...s, open: false })), []);
 
   useEffect(() => {
     const lenis = new Lenis({ lerp: 0.09 });
@@ -49,24 +67,9 @@ function App() {
   }, []);
 
   return (
-    <QuoteContext.Provider value={{ openQuote }}>
-      <BrowserRouter>
-        <ScrollManager lenisRef={lenisRef} />
-        <div className="App min-h-screen bg-ink font-body text-slate-100">
-          <div className="noise-overlay" aria-hidden="true" />
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </main>
-          <Footer />
-          <QuoteModal open={quote.open} product={quote.product} onClose={closeQuote} />
-        </div>
-      </BrowserRouter>
-    </QuoteContext.Provider>
+    <BrowserRouter>
+      <Shell lenisRef={lenisRef} />
+    </BrowserRouter>
   );
 }
 
