@@ -3,7 +3,6 @@ import { useSearchParams } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Plus, Minus } from "lucide-react";
 import { useQuote } from "@/App";
-import { Reveal, SectionHead } from "@/components/Reveal";
 import Marquee from "@/components/Marquee";
 import ProductDiagram from "@/components/ProductDiagram";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
@@ -142,20 +141,6 @@ export default function Products() {
 
   return (
     <div className="pt-[72px]" data-testid="products-page">
-      <section className="relative overflow-hidden border-b border-line">
-        <div className="blueprint-grid absolute inset-0" aria-hidden="true" />
-        <div className="relative mx-auto max-w-[1440px] px-5 pb-16 pt-20 sm:px-8 sm:pt-28">
-          <SectionHead index="CAT—08" eyebrow="Full Fabrication Catalog" title="The Product Line" />
-          <Reveal delay={0.15} className="mt-6 max-w-2xl">
-            <p className="text-base leading-relaxed text-slate-400">
-              Seven component families covering every flat-roof penetration, drain point, and
-              perimeter edge. All stocked in standard sizes, all available as custom fabrication
-              runs to your shop drawings.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
       <Marquee />
 
       <div className="sticky top-[72px] z-40 border-b border-line bg-ink/90 backdrop-blur-md">
