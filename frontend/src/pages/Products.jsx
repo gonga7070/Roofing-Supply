@@ -45,10 +45,19 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
       </div>
 
       <div className="blueprint-grid-fine flex h-44 items-center justify-center border-b border-line text-steel/60 transition-colors duration-300 group-hover:text-steel">
-        <ProductDiagram
-          productId={product.id}
-          className="h-32 w-auto transition-transform duration-500 ease-out group-hover:scale-110"
-        />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-full w-full object-contain p-3 transition-transform duration-500 ease-out group-hover:scale-105"
+            data-testid={`product-image-${product.id}`}
+          />
+        ) : (
+          <ProductDiagram
+            productId={product.id}
+            className="h-32 w-auto transition-transform duration-500 ease-out group-hover:scale-110"
+          />
+        )}
       </div>
 
       <div className="flex flex-1 flex-col p-6">

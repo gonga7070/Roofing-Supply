@@ -5,6 +5,7 @@ export const PRODUCTS = [
     id: "roof-drains",
     name: "Heavy-Duty Cast Aluminum / Copper Roof Drains",
     shortName: "Roof Drains",
+    image: "/products/roof-drain.webp",
     category: "Drainage",
     shortDesc:
       "Commercial primary roof drains with heavy cast metal domes, clamping collar, and seamless weld flange.",

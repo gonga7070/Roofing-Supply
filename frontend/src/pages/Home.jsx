@@ -251,7 +251,15 @@ const ProductStrip = () => {
                 >
                   <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-forge">{p.tag}</span>
                   <div className="my-6 flex h-28 items-center justify-center text-steel/70 transition-colors duration-300 group-hover:text-steel">
-                    <ProductDiagram productId={id} className="h-full w-auto transition-transform duration-500 group-hover:scale-110" />
+                    {p.image ? (
+                      <img
+                        src={p.image}
+                        alt={p.shortName}
+                        className="h-full w-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <ProductDiagram productId={id} className="h-full w-auto transition-transform duration-500 group-hover:scale-110" />
+                    )}
                   </div>
                   <h3 className="font-head text-xl font-bold uppercase tracking-tight text-slate-100 transition-colors group-hover:text-forge">
                     {p.shortName}
