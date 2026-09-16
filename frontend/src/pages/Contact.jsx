@@ -34,13 +34,13 @@ const INFO = [
 export default function Contact() {
   return (
     <div className="pt-[72px]" data-testid="contact-page">
-      <section className="relative overflow-hidden border-b border-line">
-        <div className="blueprint-grid absolute inset-0" aria-hidden="true" />
-        <SparkCanvas density={20} />
+      <section className="relative overflow-hidden border-b border-white/10 bg-black">
+        <div className="blueprint-grid-fine absolute inset-0" aria-hidden="true" />
+        <SparkCanvas density={20} dark />
         <div className="relative mx-auto max-w-[1440px] px-5 pb-16 pt-20 sm:px-8 sm:pt-28">
-          <SectionHead index="TLK" eyebrow="Direct To The Estimating Desk" title="Talk To The Shop" />
+          <SectionHead index="TLK" eyebrow="Direct To The Estimating Desk" title="Talk To The Shop" dark />
           <Reveal delay={0.15} className="mt-6 max-w-2xl">
-            <p className="text-base leading-relaxed text-neutral-600">
+            <p className="text-base leading-relaxed text-white/65">
               Call or email with the spec — sizes, gauges, finishes, quantities. A real estimator
               (not a bot) prices it and replies within one business day.
             </p>

@@ -143,7 +143,7 @@ export default function Products() {
     <div className="pt-[72px]" data-testid="products-page">
       <Marquee />
 
-      <div className="sticky top-[72px] z-40 border-b border-line bg-ink/90 backdrop-blur-md">
+      <div className="sticky top-[72px] z-40 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center gap-2 px-5 py-4 sm:px-8">
           {CATEGORIES.map((c) => (
             <button
@@ -154,13 +154,13 @@ export default function Products() {
               className={`border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] transition-colors duration-200 ${
                 category === c
                   ? "border-forge bg-forge/15 text-forge"
-                  : "border-line text-neutral-600 hover:border-linehi hover:text-neutral-800"
+                  : "border-white/15 text-white/60 hover:border-white/35 hover:text-white"
               }`}
             >
               {c}
             </button>
           ))}
-          <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.25em] text-neutral-500" data-testid="product-count">
+          <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.25em] text-white/40" data-testid="product-count">
             {visible.length} / {PRODUCTS.length} Lines
           </span>
         </div>

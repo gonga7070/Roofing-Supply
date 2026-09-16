@@ -27,14 +27,14 @@ export const MaskLine = ({ children, delay = 0, className = "" }) => (
   </span>
 );
 
-export const SectionHead = ({ index, eyebrow, title, className = "" }) => (
+export const SectionHead = ({ index, eyebrow, title, className = "", dark = false }) => (
   <Reveal className={className}>
     <div className="flex items-center gap-4">
       <span className="font-mono text-xs tracking-[0.25em] text-forge">{index}</span>
       <span className="h-px w-10 bg-forge/60" aria-hidden="true" />
-      <span className="font-mono text-xs uppercase tracking-[0.25em] text-steel">{eyebrow}</span>
+      <span className={`font-mono text-xs uppercase tracking-[0.25em] ${dark ? "text-white/60" : "text-steel"}`}>{eyebrow}</span>
     </div>
-    <h2 className="mt-5 font-head text-3xl font-bold uppercase tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+    <h2 className={`mt-5 font-head text-3xl font-bold uppercase tracking-tight sm:text-4xl lg:text-5xl ${dark ? "text-white" : "text-neutral-900"}`}>
       {title}
     </h2>
   </Reveal>

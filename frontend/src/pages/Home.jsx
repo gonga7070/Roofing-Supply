@@ -56,7 +56,7 @@ const Hero = () => {
   return (
     <section ref={sectionRef} className="relative flex min-h-screen flex-col overflow-hidden" data-testid="hero-section">
       <motion.div style={{ y: bgY }} className="absolute inset-0 scale-110" aria-hidden="true">
-        <img src={IMAGES.hero} alt="" className="h-full w-full object-cover opacity-35 saturate-[0.6]" />
+        <img src={IMAGES.hero} alt="" className="h-full w-full object-cover opacity-55 saturate-[0.7]" />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/55 to-ink" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-transparent to-ink/40" />
       </motion.div>
@@ -149,10 +149,10 @@ const Hero = () => {
 };
 
 const ShopFloor = () => (
-  <section className="relative border-b border-line bg-panel/30" data-testid="shopfloor-section">
+  <section className="relative border-b border-white/10 bg-black" data-testid="shopfloor-section">
     <div className="blueprint-grid-fine absolute inset-0" aria-hidden="true" />
     <div className="relative mx-auto max-w-[1440px] px-5 py-24 sm:px-8 sm:py-32">
-      <SectionHead index="001" eyebrow="Inside The Plant" title="Cut. Brake. Weld. Ship." />
+      <SectionHead index="001" eyebrow="Inside The Plant" title="Cut. Brake. Weld. Ship." dark />
       <div className="mt-16 grid gap-6 lg:grid-cols-2">
         {[
           {
@@ -169,17 +169,17 @@ const ShopFloor = () => (
           },
         ].map((card, i) => (
           <Reveal key={card.label} delay={i * 0.15}>
-            <figure className="corner-frame spotlight-card group relative overflow-hidden border border-line" data-testid={`shopfloor-card-${i}`}>
+            <figure className="corner-frame spotlight-card group relative overflow-hidden border border-white/15" data-testid={`shopfloor-card-${i}`}>
               <img
                 src={card.img}
                 alt={card.label}
                 className="h-[380px] w-full object-cover saturate-[0.7] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" aria-hidden="true" />
-              <figcaption className="absolute inset-x-0 bottom-0 border-t border-line bg-ink/90 p-6 backdrop-blur">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" aria-hidden="true" />
+              <figcaption className="absolute inset-x-0 bottom-0 border-t border-white/15 bg-black/85 p-6 backdrop-blur">
                 <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-forge">{card.label}</p>
-                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-steel">{card.sub}</p>
-                <p className="mt-3 max-w-md text-sm leading-relaxed text-neutral-700">{card.caption}</p>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">{card.sub}</p>
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-white/70">{card.caption}</p>
               </figcaption>
             </figure>
           </Reveal>
@@ -190,7 +190,7 @@ const ShopFloor = () => (
 );
 
 const Stats = () => (
-  <section className="border-b border-line" data-testid="stats-section">
+  <section className="border-b border-white/10 bg-black" data-testid="stats-section">
     <div className="mx-auto grid max-w-[1440px] grid-cols-2 lg:grid-cols-4">
       {[
         { v: 27, suffix: "", label: "Years Fabricating", d: 0 },
@@ -200,13 +200,13 @@ const Stats = () => (
       ].map((s, i) => (
         <div
           key={s.label}
-          className={`border-line px-6 py-12 text-center sm:py-16 ${i % 2 === 1 ? "border-l" : ""} ${i >= 2 ? "border-t lg:border-t-0" : ""} ${i > 0 ? "lg:border-l" : ""}`}
+          className={`border-white/10 px-6 py-12 text-center sm:py-16 ${i % 2 === 1 ? "border-l" : ""} ${i >= 2 ? "border-t lg:border-t-0" : ""} ${i > 0 ? "lg:border-l" : ""}`}
           data-testid={`stat-${i}`}
         >
-          <p className="font-head text-5xl font-extrabold tracking-tight text-neutral-900 sm:text-6xl">
+          <p className="font-head text-5xl font-extrabold tracking-tight text-white sm:text-6xl">
             <Counter to={s.v} decimals={s.d} suffix={s.suffix} />
           </p>
-          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-steel">{s.label}</p>
+          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">{s.label}</p>
         </div>
       ))}
     </div>
@@ -273,14 +273,14 @@ const ProductStrip = () => {
 const CtaBand = () => {
   const { openQuote } = useQuote();
   return (
-    <section className="relative overflow-hidden" data-testid="cta-band-section">
-      <SparkCanvas density={26} />
-      <div className="blueprint-grid absolute inset-0 opacity-60" aria-hidden="true" />
+    <section className="relative overflow-hidden bg-black" data-testid="cta-band-section">
+      <SparkCanvas density={26} dark />
+      <div className="blueprint-grid-fine absolute inset-0" aria-hidden="true" />
       <div className="relative mx-auto max-w-[1440px] px-5 py-28 text-center sm:px-8 sm:py-36">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-steel">Specs In — Metal Out</p>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/60">Specs In — Metal Out</p>
         </Reveal>
-        <h2 className="mx-auto mt-6 max-w-4xl font-head text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-neutral-900 sm:text-7xl">
+        <h2 className="mx-auto mt-6 max-w-4xl font-head text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl">
           <MaskLine delay={0.1}>Spec It.</MaskLine>
           <MaskLine delay={0.22}>
             <span className="text-forge">We Fabricate It.</span>
@@ -299,7 +299,7 @@ const CtaBand = () => {
           <Link
             to="/contact"
             data-testid="cta-band-contact-button"
-            className="font-mono text-xs uppercase tracking-[0.25em] text-neutral-600 underline decoration-linehi underline-offset-8 transition-colors hover:text-steel hover:decoration-steel"
+            className="font-mono text-xs uppercase tracking-[0.25em] text-white/60 underline decoration-white/30 underline-offset-8 transition-colors hover:text-white hover:decoration-white"
           >
             Talk To The Shop
           </Link>
