@@ -310,9 +310,9 @@ const PlantMap = () => (
           <iframe
             title="ForgeLine Metals — 51 Roysun Rd Unit 9, Woodbridge, ON"
             data-testid="plant-map"
-            src="https://www.google.com/maps?q=51+Roysun+Rd+Unit+9,+Woodbridge,+ON+L4L+8P9&output=embed"
+            src="https://www.google.com/maps?q=51+Roysun+Rd+Unit+9,+Woodbridge,+ON+L4L+8P9&t=k&output=embed"
             className="h-[380px] w-full sm:h-[440px]"
-            style={{ border: 0, filter: "grayscale(1) contrast(1.05)" }}
+            style={{ border: 0 }}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
