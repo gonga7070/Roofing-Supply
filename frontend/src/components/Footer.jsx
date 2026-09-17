@@ -20,10 +20,10 @@ export default function Footer() {
           </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
             Architectural-grade heavy metal fabrications for commercial flat roof systems.
-            Manufactured, welded, and shipped from Chicago since 1998.
+            Manufactured, welded, and shipped from Woodbridge, ON since 1998.
           </p>
           <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">
-            41.8781° N / 87.6298° W — Ironworks District
+            43.7850° N / 79.6139° W — Woodbridge, Ontario
           </p>
         </div>
 

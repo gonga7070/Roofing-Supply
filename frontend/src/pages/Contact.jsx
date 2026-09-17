@@ -6,7 +6,7 @@ const INFO = [
   {
     icon: Phone,
     label: "Call The Shop",
-    lines: ["+1 (312) 555-0148", "Mon–Fri 06:00–18:00 CST"],
+    lines: ["+1 (312) 555-0148", "Mon–Fri 06:00–18:00 EST"],
     href: "tel:+13125550148",
     testid: "contact-info-phone",
   },
@@ -20,7 +20,7 @@ const INFO = [
   {
     icon: MapPin,
     label: "Plant & HQ",
-    lines: ["4420 S. Ironworks Avenue", "Chicago, IL 60609"],
+    lines: ["51 Roysun Rd Unit 9", "Woodbridge, ON L4L 8P9"],
     testid: "contact-info-address",
   },
   {

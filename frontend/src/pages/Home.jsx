@@ -88,7 +88,7 @@ const Hero = () => {
               <p className="text-base leading-relaxed text-white/65 sm:text-lg">
                 We manufacture the drainage and edge-metal components that keep commercial flat
                 roofs watertight — roof drains, scuppers, cones, stack jacks and more, brake-formed
-                and TIG-welded in Chicago.
+                and TIG-welded in Woodbridge, ON.
               </p>
             </Reveal>
 
@@ -139,7 +139,7 @@ const Hero = () => {
 
       <motion.div style={{ opacity: fade }} className="relative z-10 border-t border-white/10">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-8">
-          <span className="font-mono text-[10px] tracking-[0.3em] text-white/40">41.8781° N / 87.6298° W</span>
+          <span className="font-mono text-[10px] tracking-[0.3em] text-white/40">43.7850° N / 79.6139° W</span>
           <span className="hidden h-8 w-px origin-top animate-scroll-pulse bg-forge sm:block" aria-hidden="true" />
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">Scroll — 001</span>
         </div>
