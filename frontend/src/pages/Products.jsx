@@ -8,9 +8,9 @@ import ProductDiagram from "@/components/ProductDiagram";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
 
 const SpecRow = ({ label, value }) => (
-  <div className="grid grid-cols-[110px_1fr] gap-3 border-b border-line/60 py-2.5 last:border-0">
-    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">{label}</span>
-    <span className="text-xs leading-relaxed text-neutral-700">{value}</span>
+  <div className="grid grid-cols-[110px_1fr] gap-3 border-b border-white/10 py-2.5 last:border-0">
+    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">{label}</span>
+    <span className="text-xs leading-relaxed text-white/75">{value}</span>
   </div>
 );
 
@@ -34,16 +34,16 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
       ref={cardRef}
       onMouseMove={onMove}
       data-testid={`product-card-${product.id}`}
-      className="spotlight-card group relative flex flex-col border border-line bg-panel/40 transition-colors duration-300 hover:border-linehi"
+      className="spotlight-card group relative flex flex-col border border-black bg-black transition-colors duration-300"
     >
-      <div className="flex items-center justify-between border-b border-line px-6 py-3">
-        <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-500">
+      <div className="flex items-center justify-between border-b border-white/10 px-6 py-3">
+        <span className="font-mono text-[10px] tracking-[0.3em] text-white/40">
           {String(index + 1).padStart(2, "0")}
         </span>
         <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-forge">{product.tag}</span>
       </div>
 
-      <div className="blueprint-grid-fine flex h-44 items-center justify-center border-b border-line bg-neutral-950 text-steel/60 transition-colors duration-300 group-hover:text-steel">
+      <div className="blueprint-grid-fine flex h-44 items-center justify-center border-b border-white/10 bg-neutral-950 text-steel/60 transition-colors duration-300 group-hover:text-steel">
         {product.image ? (
           <img
             src={product.image}
@@ -60,11 +60,11 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-steel">{product.category}</span>
-        <h3 className="mt-2 font-head text-2xl font-bold uppercase leading-tight tracking-tight text-neutral-900">
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">{product.category}</span>
+        <h3 className="mt-2 font-head text-2xl font-bold uppercase leading-tight tracking-tight text-white">
           {product.name}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-neutral-600">{product.shortDesc}</p>
+        <p className="mt-3 text-sm leading-relaxed text-white/60">{product.shortDesc}</p>
 
         <div className="mt-5">
           <SpecRow label="Materials" value={product.materials.join(" / ")} />
@@ -80,7 +80,7 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="overflow-hidden"
             >
-              <div className="border-t border-line pt-1" data-testid={`product-specs-panel-${product.id}`}>
+              <div className="border-t border-white/10 pt-1" data-testid={`product-specs-panel-${product.id}`}>
                 <SpecRow label="Sizes" value={product.sizes} />
                 <SpecRow label="Finishes" value={product.finishes} />
                 <SpecRow label="Standards" value={product.astm} />
@@ -105,7 +105,7 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
             data-testid={`product-specs-btn-${product.id}`}
             onClick={onToggle}
             aria-expanded={expanded}
-            className="flex items-center justify-center gap-1.5 border border-linehi px-4 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-neutral-700 transition-colors duration-200 hover:border-steel hover:text-steel"
+            className="flex items-center justify-center gap-1.5 border border-white/25 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-white/75 transition-colors duration-200 hover:border-white hover:text-white"
           >
             {expanded ? <Minus size={13} /> : <Plus size={13} />}
             Specs
