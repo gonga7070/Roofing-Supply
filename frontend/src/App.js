@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
 import Products from "@/pages/Products";
+import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
 
 const QuoteContext = createContext({ openQuote: () => {} });
@@ -37,6 +38,7 @@ const Shell = ({ lenisRef }) => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

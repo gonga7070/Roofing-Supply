@@ -58,6 +58,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link to="/gallery" data-testid="footer-gallery-link" className="link-underline text-white/60 transition-colors hover:text-forge">
+                Gallery
+              </Link>
+            </li>
+            <li>
               <Link to="/contact" data-testid="footer-contact-link" className="link-underline text-white/60 transition-colors hover:text-forge">
                 Contact
               </Link>
