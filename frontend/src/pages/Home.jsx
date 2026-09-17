@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, useInView, animate, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Navigation } from "lucide-react";
 import { useQuote } from "@/App";
 import { MaskLine, Reveal, SectionHead } from "@/components/Reveal";
 import SparkCanvas from "@/components/SparkCanvas";
@@ -269,6 +269,62 @@ const ProductStrip = () => {
   );
 };
 
+const PlantMap = () => (
+  <section className="relative overflow-hidden border-t border-white/10 bg-black" data-testid="plant-map-section">
+    <div className="blueprint-grid-fine absolute inset-0" aria-hidden="true" />
+    <div className="relative mx-auto grid max-w-[1440px] gap-12 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-12">
+      <div className="flex flex-col justify-center lg:col-span-4">
+        <SectionHead index="003" eyebrow="Find The Plant" title="Come See The Metal." dark />
+        <Reveal delay={0.15} className="mt-8 space-y-5">
+          <div className="flex items-start gap-4">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-white/20 text-forge">
+              <MapPin size={17} strokeWidth={1.5} />
+            </span>
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">Plant & HQ</p>
+              <p className="mt-1.5 font-head text-xl font-bold uppercase tracking-tight text-white">
+                51 Roysun Rd Unit 9
+              </p>
+              <p className="font-mono text-xs tracking-[0.15em] text-white/50">Woodbridge, ON L4L 8P9</p>
+            </div>
+          </div>
+          <p className="text-sm leading-relaxed text-white/60">
+            Will-call pickups, shop tours by appointment, and live inventory checks — Monday to
+            Friday, 06:00–18:00 EST.
+          </p>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=51+Roysun+Rd+Unit+9,+Woodbridge,+ON+L4L+8P9"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="get-directions-button"
+            className="group inline-flex items-center gap-3 border border-forge bg-forge px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-ink transition-colors duration-200 hover:bg-transparent hover:text-forge"
+          >
+            Get Directions
+            <Navigation size={14} strokeWidth={2} className="transition-transform duration-200 group-hover:translate-x-1" />
+          </a>
+        </Reveal>
+      </div>
+
+      <Reveal delay={0.25} className="lg:col-span-8">
+        <div className="corner-frame relative border border-white/20 bg-neutral-950 p-2" data-testid="plant-map-frame">
+          <iframe
+            title="ForgeLine Metals — 51 Roysun Rd Unit 9, Woodbridge, ON"
+            data-testid="plant-map"
+            src="https://www.google.com/maps?q=51+Roysun+Rd+Unit+9,+Woodbridge,+ON+L4L+8P9&output=embed"
+            className="h-[380px] w-full sm:h-[440px]"
+            style={{ border: 0, filter: "grayscale(1) contrast(1.05)" }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+          <span className="absolute -left-px -top-px h-5 w-5 border-l-2 border-t-2 border-forge" aria-hidden="true" />
+          <span className="absolute -right-px -top-px h-5 w-5 border-r-2 border-t-2 border-forge" aria-hidden="true" />
+        </div>
+      </Reveal>
+    </div>
+  </section>
+);
+
 const CtaBand = () => {
   const { openQuote } = useQuote();
   return (
@@ -315,6 +371,7 @@ export default function Home() {
       <ShopFloor />
       <Stats />
       <ProductStrip />
+      <PlantMap />
       <CtaBand />
     </>
   );
