@@ -53,22 +53,22 @@ export default function Contact() {
           {INFO.map((item, i) => {
             const body = (
               <>
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center border border-line text-steel transition-colors duration-300 group-hover:border-forge group-hover:text-forge">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/20 text-white/70 transition-colors duration-300 group-hover:border-forge group-hover:text-forge">
                   <item.icon size={20} strokeWidth={1.5} />
                 </span>
                 <div>
-                  <h3 className="font-mono text-[10px] uppercase tracking-[0.25em] text-steel">{item.label}</h3>
-                  <p className="mt-2 font-head text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
+                  <h3 className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">{item.label}</h3>
+                  <p className="mt-2 font-head text-2xl font-bold tracking-tight text-white sm:text-3xl">
                     {item.lines[0]}
                   </p>
-                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">
+                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-white/50">
                     {item.lines[1]}
                   </p>
                 </div>
               </>
             );
             const cls =
-              "group flex items-center gap-6 border border-line bg-panel/40 p-8 transition-colors duration-300 hover:border-forge/60 hover:bg-panel";
+              "group flex items-center gap-6 border border-black bg-black p-8 transition-colors duration-300 hover:border-forge/60 hover:bg-neutral-900";
             return (
               <Reveal key={item.label} delay={i * 0.1}>
                 {item.href ? (
