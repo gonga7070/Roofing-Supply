@@ -89,7 +89,7 @@ export default function Footer() {
           <span className="text-[9px] normal-case tracking-[0.15em] text-white/30" data-testid="footer-credit">
             Website by{" "}
             <a
-              href="https://akrondigital.ca"
+              href="https://www.akrondigital.ca/"
               target="_blank"
               rel="noopener noreferrer"
               data-testid="footer-credit-link"
