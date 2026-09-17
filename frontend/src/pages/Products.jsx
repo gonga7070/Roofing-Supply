@@ -3,7 +3,6 @@ import { useSearchParams } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Plus, Minus } from "lucide-react";
 import { useQuote } from "@/App";
-import Marquee from "@/components/Marquee";
 import ProductDiagram from "@/components/ProductDiagram";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
 
@@ -141,8 +140,6 @@ export default function Products() {
 
   return (
     <div className="pt-[72px]" data-testid="products-page">
-      <Marquee />
-
       <div className="border-b border-white/10 bg-black">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center gap-2 px-5 py-4 sm:px-8">
           {CATEGORIES.map((c) => (

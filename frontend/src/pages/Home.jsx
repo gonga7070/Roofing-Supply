@@ -5,7 +5,6 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useQuote } from "@/App";
 import { MaskLine, Reveal, SectionHead } from "@/components/Reveal";
 import SparkCanvas from "@/components/SparkCanvas";
-import Marquee from "@/components/Marquee";
 import ProductDiagram from "@/components/ProductDiagram";
 import { PRODUCTS, IMAGES } from "@/data/products";
 
@@ -313,7 +312,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Marquee />
       <ShopFloor />
       <Stats />
       <ProductStrip />
