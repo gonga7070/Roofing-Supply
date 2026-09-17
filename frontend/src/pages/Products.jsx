@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Plus, Minus } from "lucide-react";
 import { useQuote } from "@/App";
+import { hasPlayedEntrance } from "@/components/Reveal";
 import ProductDiagram from "@/components/ProductDiagram";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
 
@@ -26,7 +27,7 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, y: 24 }}
+      initial={hasPlayedEntrance() ? false : { opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}

@@ -2,10 +2,18 @@ import { motion } from "framer-motion";
 
 const EASE = [0.22, 1, 0.36, 1];
 
+export const hasPlayedEntrance = () => {
+  try {
+    return sessionStorage.getItem(`fg-animated:${window.location.pathname}`) === "1";
+  } catch {
+    return false;
+  }
+};
+
 export const Reveal = ({ children, delay = 0, y = 32, className = "" }) => (
   <motion.div
     className={className}
-    initial={{ opacity: 0, y }}
+    initial={hasPlayedEntrance() ? false : { opacity: 0, y }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-70px" }}
     transition={{ duration: 0.75, delay, ease: EASE }}
@@ -18,7 +26,7 @@ export const MaskLine = ({ children, delay = 0, className = "" }) => (
   <span className={`block overflow-hidden ${className}`}>
     <motion.span
       className="block will-change-transform"
-      initial={{ y: "112%" }}
+      initial={hasPlayedEntrance() ? false : { y: "112%" }}
       animate={{ y: "0%" }}
       transition={{ duration: 0.95, delay, ease: EASE }}
     >

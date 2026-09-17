@@ -14,7 +14,14 @@ export const useQuote = () => useContext(QuoteContext);
 
 const ScrollManager = ({ lenisRef }) => {
   const { pathname, hash } = useLocation();
+  const prevRef = useRef(null);
   useEffect(() => {
+    if (prevRef.current && prevRef.current !== pathname) {
+      try {
+        sessionStorage.setItem(`fg-animated:${prevRef.current}`, "1");
+      } catch {}
+    }
+    prevRef.current = pathname;
     if (hash) {
       const t = setTimeout(() => lenisRef.current?.scrollTo(hash, { offset: -72 }), 120);
       return () => clearTimeout(t);

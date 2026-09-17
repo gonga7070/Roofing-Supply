@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, useInView, animate, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight, ArrowUpRight, MapPin, Navigation } from "lucide-react";
 import { useQuote } from "@/App";
-import { MaskLine, Reveal, SectionHead } from "@/components/Reveal";
+import { MaskLine, Reveal, SectionHead, hasPlayedEntrance } from "@/components/Reveal";
 import SparkCanvas from "@/components/SparkCanvas";
 import ProductDiagram from "@/components/ProductDiagram";
 import { PRODUCTS, IMAGES } from "@/data/products";
@@ -13,6 +13,10 @@ const Counter = ({ to, decimals = 0, suffix = "" }) => {
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const [val, setVal] = useState(0);
   useEffect(() => {
+    if (hasPlayedEntrance()) {
+      setVal(to);
+      return;
+    }
     if (!inView) return;
     const controls = animate(0, to, {
       duration: 1.9,
