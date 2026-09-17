@@ -239,7 +239,7 @@ const ProductStrip = () => {
                 <Link
                   to={`/products?item=${id}`}
                   data-testid={`featured-product-${id}`}
-                  className="group flex h-full flex-col border-b border-r border-line bg-panel/30 p-7 transition-colors duration-300 hover:bg-card"
+                  className="group flex h-full flex-col border-b border-r border-line bg-black p-7 transition-colors duration-300 hover:bg-neutral-900"
                 >
                   <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-forge">{p.tag}</span>
                   <div className="my-6 flex h-28 items-center justify-center bg-neutral-950 text-steel/70 transition-colors duration-300 group-hover:text-steel">
@@ -253,11 +253,11 @@ const ProductStrip = () => {
                       <ProductDiagram productId={id} className="h-full w-auto transition-transform duration-500 group-hover:scale-110" />
                     )}
                   </div>
-                  <h3 className="font-head text-xl font-bold uppercase tracking-tight text-neutral-900 transition-colors group-hover:text-forge">
+                  <h3 className="font-head text-xl font-bold uppercase tracking-tight text-white transition-colors group-hover:text-forge">
                     {p.shortName}
                   </h3>
-                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-neutral-500">{p.shortDesc}</p>
-                  <span className="mt-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500 transition-colors group-hover:text-steel">
+                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-white/50">{p.shortDesc}</p>
+                  <span className="mt-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 transition-colors group-hover:text-white">
                     View Specs <ArrowUpRight size={12} />
                   </span>
                 </Link>
