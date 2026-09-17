@@ -21,7 +21,6 @@ export const PRODUCTS = [
     name: "Spun Aluminum Roofing Cones",
     shortName: "Roof Cones",
     image: "/products/roof-cone.png",
-    imageClass: "scale-[1.15] group-hover:scale-[1.25]",
     category: "Penetrations",
     shortDesc:
       "One-piece spun cone flashings with wide base flanges for vent, conduit, and pipe penetrations on flat roofs.",
@@ -37,7 +36,6 @@ export const PRODUCTS = [
     name: "Spun Aluminum & Copper Stack Jacks",
     shortName: "Stack Jacks",
     image: "/products/stack-jack.png",
-    imageClass: "scale-[1.3] group-hover:scale-[1.4]",
     category: "Penetrations",
     shortDesc:
       "One-piece spun vent pipe flashings with welded base flanges and storm collars for plumbing stack penetrations.",
@@ -53,7 +51,6 @@ export const PRODUCTS = [
     name: "Parapet Thru-Wall & Overflow Scuppers",
     shortName: "Scuppers",
     image: "/products/scupper.png",
-    imageClass: "scale-[1.45] group-hover:scale-[1.55]",
     category: "Perimeter",
     shortDesc:
       "Custom fabricated parapet wall outlets with welded collector boxes and drip edges for emergency drainage.",
@@ -69,7 +66,6 @@ export const PRODUCTS = [
     name: "Rain Collars with Draw Bands",
     shortName: "Rain Collar",
     image: "/products/rain-collar.png",
-    imageClass: "scale-[1.15] group-hover:scale-[1.25]",
     category: "Penetrations",
     shortDesc:
       "Spun cone rain collars that clamp above pipe flashings and stack jacks, shedding water off vent penetrations.",
