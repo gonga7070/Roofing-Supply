@@ -143,7 +143,7 @@ export default function Products() {
     <div className="pt-[72px]" data-testid="products-page">
       <Marquee />
 
-      <div className="sticky top-[72px] z-40 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+      <div className="border-b border-white/10 bg-black">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center gap-2 px-5 py-4 sm:px-8">
           {CATEGORIES.map((c) => (
             <button
