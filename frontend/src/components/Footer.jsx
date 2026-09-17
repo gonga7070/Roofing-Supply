@@ -86,6 +86,22 @@ export default function Footer() {
         <div className="mx-auto flex max-w-[1440px] flex-col items-start justify-between gap-3 px-5 py-5 font-mono text-[10px] uppercase tracking-[0.25em] text-white/40 sm:flex-row sm:items-center sm:px-8">
           <span>© 2026 ForgeLine Metals LLC — All rights reserved</span>
           <span className="text-white/30">Copper / Stainless / Galvanized / TPO-Coated</span>
+          <span className="text-[9px] normal-case tracking-[0.15em] text-white/30" data-testid="footer-credit">
+            Website by{" "}
+            <a
+              href="https://akrondigital.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="footer-credit-link"
+              className="text-white/50 underline decoration-white/20 underline-offset-4 transition-colors hover:text-forge"
+            >
+              Akron Digital
+            </a>{" "}
+            ·{" "}
+            <a href="tel:+16477455082" data-testid="footer-credit-phone" className="transition-colors hover:text-forge">
+              647-745-5082
+            </a>
+          </span>
         </div>
       </div>
     </footer>
