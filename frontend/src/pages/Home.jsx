@@ -113,7 +113,7 @@ const Hero = () => {
             </Reveal>
           </div>
 
-          <div className="hidden lg:col-span-4 lg:block">
+          <div className="mt-4 lg:col-span-4 lg:mt-0">
             <Reveal delay={1.05}>
               <div style={{ perspective: 900 }}>
                 <motion.div
@@ -126,7 +126,7 @@ const Hero = () => {
                   <img
                     src={IMAGES.welding}
                     alt="TIG welding stainless roof drain flange in the ForgeLine shop"
-                    className="h-[420px] w-full object-cover saturate-[0.75]"
+                    className="h-60 w-full object-cover saturate-[0.75] sm:h-72 lg:h-[420px]"
                   />
                   <span className="absolute -left-px -top-px h-5 w-5 border-l-2 border-t-2 border-forge" aria-hidden="true" />
                   <span className="absolute -right-px -top-px h-5 w-5 border-r-2 border-t-2 border-forge" aria-hidden="true" />
