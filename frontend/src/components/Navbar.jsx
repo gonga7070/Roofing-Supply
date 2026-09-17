@@ -33,7 +33,7 @@ export default function Navbar() {
     }`;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[80] border-b border-white/10 bg-black/70 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-[80] border-b border-white/10 bg-black/85 backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-5 sm:px-8">
         <Logo />
 

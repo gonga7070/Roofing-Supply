@@ -163,7 +163,7 @@ export default function Products() {
         </div>
       </div>
 
-      <section className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-20">
+      <section className="mx-auto max-w-[1440px] px-5 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-14">
         <motion.div layout className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {visible.map((p, i) => (
