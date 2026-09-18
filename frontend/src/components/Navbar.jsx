@@ -13,10 +13,10 @@ const Logo = () => (
       <span className="absolute -right-1 -top-1 h-2 w-2 bg-forge" aria-hidden="true" />
     </span>
     <span className="leading-none">
-      <span className="block font-head text-xl font-bold uppercase tracking-wide text-neutral-900">
+      <span className="block font-head text-xl font-bold uppercase tracking-wide text-white">
         ForgeLine
       </span>
-      <span className="block font-mono text-[9px] uppercase tracking-[0.35em] text-steel">
+      <span className="block font-mono text-[9px] uppercase tracking-[0.35em] text-white/50">
         Metals
       </span>
     </span>
@@ -29,11 +29,11 @@ export default function Navbar() {
 
   const navLink = ({ isActive }) =>
     `link-underline font-mono text-xs uppercase tracking-[0.22em] transition-colors duration-200 ${
-      isActive ? "text-forge active" : "text-neutral-700 hover:text-forge"
+      isActive ? "text-forge active" : "text-white/75 hover:text-forge"
     }`;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[80] border-b border-line bg-white/85 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-[80] border-b border-white/10 bg-black/80 backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-5 sm:px-8">
         <Logo />
 
@@ -70,7 +70,7 @@ export default function Navbar() {
             data-testid="nav-mobile-menu-button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center border border-line text-neutral-800 transition-colors hover:border-forge hover:text-forge md:hidden"
+            className="flex h-10 w-10 items-center justify-center border border-white/20 text-white/85 transition-colors hover:border-forge hover:text-forge md:hidden"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -84,7 +84,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-line bg-white md:hidden"
+            className="overflow-hidden border-t border-white/10 bg-black/95 md:hidden"
             aria-label="Mobile"
           >
             <div className="flex flex-col gap-1 px-5 py-4">
@@ -100,7 +100,7 @@ export default function Navbar() {
                   to={l.to}
                   data-testid={l.id}
                   onClick={() => setOpen(false)}
-                  className="border-b border-line/60 py-3 font-head text-2xl font-semibold uppercase tracking-wide text-neutral-800 transition-colors hover:text-forge"
+                  className="border-b border-white/10 py-3 font-head text-2xl font-semibold uppercase tracking-wide text-white/85 transition-colors hover:text-forge"
                 >
                   {l.label}
                 </Link>
