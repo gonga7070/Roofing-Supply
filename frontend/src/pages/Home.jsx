@@ -68,9 +68,9 @@ const Hero = () => {
 
       <motion.div
         style={{ opacity: fade, y: titleY }}
-        className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-5 pb-16 pt-28 sm:px-8 lg:pt-32"
+        className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-5 pb-10 pt-24 sm:px-8 lg:pt-24"
       >
-        <div className="grid items-center gap-14 lg:grid-cols-12">
+        <div className="grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-8">
             <MaskLine delay={0.15}>
               <span className="inline-flex items-center gap-3 border border-linehi bg-white/70 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.3em] text-steel backdrop-blur sm:text-xs">
@@ -79,7 +79,7 @@ const Hero = () => {
               </span>
             </MaskLine>
 
-            <h1 className="mt-7 font-head text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 font-head text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
               <MaskLine delay={0.3}>Built for the elements.</MaskLine>
               <MaskLine delay={0.42}>
                 <span className="text-forge">Engineered for performance.</span>
@@ -87,7 +87,7 @@ const Hero = () => {
               <MaskLine delay={0.54}>Made to last.</MaskLine>
             </h1>
 
-            <Reveal delay={0.75} className="mt-6 max-w-xl">
+            <Reveal delay={0.75} className="mt-5 max-w-xl">
               <p className="text-base leading-relaxed text-neutral-600 sm:text-lg">
                 We manufacture the drainage and edge-metal components that keep commercial flat
                 roofs watertight — roof drains, scuppers, cones, stack jacks and more, brake-formed
@@ -95,7 +95,7 @@ const Hero = () => {
               </p>
             </Reveal>
 
-            <Reveal delay={0.9} className="mt-8 flex flex-wrap items-center gap-4">
+            <Reveal delay={0.9} className="mt-6 flex flex-wrap items-center gap-4">
               <button
                 type="button"
                 data-testid="hero-cta-quote-button"
@@ -129,7 +129,7 @@ const Hero = () => {
                   <img
                     src={IMAGES.welding}
                     alt="TIG welding stainless roof drain flange in the ForgeLine shop"
-                    className="h-60 w-full object-cover saturate-[0.75] sm:h-72 lg:h-[420px]"
+                    className="h-60 w-full object-cover saturate-[0.75] sm:h-72 lg:h-[min(400px,44vh)]"
                   />
                   <span className="absolute -left-px -top-px h-5 w-5 border-l-2 border-t-2 border-forge" aria-hidden="true" />
                   <span className="absolute -right-px -top-px h-5 w-5 border-r-2 border-t-2 border-forge" aria-hidden="true" />
