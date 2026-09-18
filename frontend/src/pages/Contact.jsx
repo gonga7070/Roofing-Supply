@@ -34,13 +34,13 @@ const INFO = [
 export default function Contact() {
   return (
     <div className="pt-[72px]" data-testid="contact-page">
-      <section className="relative overflow-hidden border-b border-white/10 bg-black">
-        <div className="blueprint-grid-fine absolute inset-0" aria-hidden="true" />
-        <SparkCanvas density={20} dark />
+      <section className="relative overflow-hidden border-b border-line">
+        <div className="blueprint-grid absolute inset-0" aria-hidden="true" />
+        <SparkCanvas density={20} />
         <div className="relative mx-auto max-w-[1440px] px-5 pb-16 pt-20 sm:px-8 sm:pt-28">
-          <SectionHead index="TLK" eyebrow="Direct To The Estimating Desk" title="Talk To The Shop" dark />
+          <SectionHead index="TLK" eyebrow="Direct To The Estimating Desk" title="Talk To The Shop" />
           <Reveal delay={0.15} className="mt-6 max-w-2xl">
-            <p className="text-base leading-relaxed text-white/65">
+            <p className="text-base leading-relaxed text-neutral-600">
               Call or email with the spec — sizes, gauges, finishes, quantities. A real estimator
               (not a bot) prices it and replies within one business day.
             </p>
@@ -53,22 +53,22 @@ export default function Contact() {
           {INFO.map((item, i) => {
             const body = (
               <>
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center border border-white/20 text-white/70 transition-colors duration-300 group-hover:border-forge group-hover:text-forge">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center border border-line text-steel transition-colors duration-300 group-hover:border-forge group-hover:text-forge">
                   <item.icon size={20} strokeWidth={1.5} />
                 </span>
                 <div>
-                  <h3 className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">{item.label}</h3>
-                  <p className="mt-2 font-head text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                  <h3 className="font-mono text-[10px] uppercase tracking-[0.25em] text-steel">{item.label}</h3>
+                  <p className="mt-2 font-head text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
                     {item.lines[0]}
                   </p>
-                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-white/50">
+                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">
                     {item.lines[1]}
                   </p>
                 </div>
               </>
             );
             const cls =
-              "group flex items-center gap-6 border border-black bg-black p-8 transition-colors duration-300 hover:border-forge/60 hover:bg-neutral-900";
+              "group flex items-center gap-6 border border-line bg-panel/40 p-8 transition-colors duration-300 hover:border-forge/60 hover:bg-white";
             return (
               <Reveal key={item.label} delay={i * 0.1}>
                 {item.href ? (

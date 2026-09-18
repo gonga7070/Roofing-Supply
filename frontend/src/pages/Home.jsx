@@ -193,7 +193,7 @@ const ShopFloor = () => (
 );
 
 const Stats = () => (
-  <section className="border-b border-white/10 bg-black" data-testid="stats-section">
+  <section className="border-b border-line" data-testid="stats-section">
     <div className="mx-auto grid max-w-[1440px] grid-cols-2 lg:grid-cols-4">
       {[
         { v: 27, suffix: "", label: "Years Fabricating", d: 0 },
@@ -203,13 +203,13 @@ const Stats = () => (
       ].map((s, i) => (
         <div
           key={s.label}
-          className={`border-white/10 px-6 py-12 text-center sm:py-16 ${i % 2 === 1 ? "border-l" : ""} ${i >= 2 ? "border-t lg:border-t-0" : ""} ${i > 0 ? "lg:border-l" : ""}`}
+          className={`border-line px-6 py-12 text-center sm:py-16 ${i % 2 === 1 ? "border-l" : ""} ${i >= 2 ? "border-t lg:border-t-0" : ""} ${i > 0 ? "lg:border-l" : ""}`}
           data-testid={`stat-${i}`}
         >
-          <p className="font-head text-5xl font-extrabold tracking-tight text-white sm:text-6xl">
+          <p className="font-head text-5xl font-extrabold tracking-tight text-neutral-900 sm:text-6xl">
             <Counter to={s.v} decimals={s.d} suffix={s.suffix} />
           </p>
-          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">{s.label}</p>
+          <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-steel">{s.label}</p>
         </div>
       ))}
     </div>
@@ -242,7 +242,7 @@ const ProductStrip = () => {
                 <Link
                   to={`/products?item=${id}`}
                   data-testid={`featured-product-${id}`}
-                  className="group flex h-full flex-col border-b border-r border-line bg-black p-7 transition-colors duration-300 hover:bg-neutral-900"
+                  className="group flex h-full flex-col border-b border-r border-line bg-panel/30 p-7 transition-colors duration-300 hover:bg-white"
                 >
                   <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-forge">{p.tag}</span>
                   <div className="my-6 flex h-28 items-center justify-center bg-neutral-950 text-steel/70 transition-colors duration-300 group-hover:text-steel">
@@ -256,11 +256,11 @@ const ProductStrip = () => {
                       <ProductDiagram productId={id} className="h-full w-auto transition-transform duration-500 group-hover:scale-110" />
                     )}
                   </div>
-                  <h3 className="font-head text-xl font-bold uppercase tracking-tight text-white transition-colors group-hover:text-forge">
+                  <h3 className="font-head text-xl font-bold uppercase tracking-tight text-neutral-900 transition-colors group-hover:text-forge">
                     {p.shortName}
                   </h3>
-                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-white/50">{p.shortDesc}</p>
-                  <span className="mt-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 transition-colors group-hover:text-white">
+                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-neutral-500">{p.shortDesc}</p>
+                  <span className="mt-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500 transition-colors group-hover:text-steel">
                     View Specs <ArrowUpRight size={12} />
                   </span>
                 </Link>
@@ -274,25 +274,25 @@ const ProductStrip = () => {
 };
 
 const PlantMap = () => (
-  <section className="relative overflow-hidden border-t border-white/10 bg-black" data-testid="plant-map-section">
-    <div className="blueprint-grid-fine absolute inset-0" aria-hidden="true" />
+  <section className="relative overflow-hidden border-t border-line bg-white" data-testid="plant-map-section">
+    <div className="blueprint-grid absolute inset-0" aria-hidden="true" />
     <div className="relative mx-auto grid max-w-[1440px] gap-12 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-12">
       <div className="flex flex-col justify-center lg:col-span-4">
-        <SectionHead index="003" eyebrow="Find The Plant" title="Come See The Metal." dark />
+        <SectionHead index="003" eyebrow="Find The Plant" title="Come See The Metal." />
         <Reveal delay={0.15} className="mt-8 space-y-5">
           <div className="flex items-start gap-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-white/20 text-forge">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-line text-forge">
               <MapPin size={17} strokeWidth={1.5} />
             </span>
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">Plant & HQ</p>
-              <p className="mt-1.5 font-head text-xl font-bold uppercase tracking-tight text-white">
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-steel">Plant & HQ</p>
+              <p className="mt-1.5 font-head text-xl font-bold uppercase tracking-tight text-neutral-900">
                 51 Roysun Rd Unit 9
               </p>
-              <p className="font-mono text-xs tracking-[0.15em] text-white/50">Woodbridge, ON L4L 8P9</p>
+              <p className="font-mono text-xs tracking-[0.15em] text-neutral-500">Woodbridge, ON L4L 8P9</p>
             </div>
           </div>
-          <p className="text-sm leading-relaxed text-white/60">
+          <p className="text-sm leading-relaxed text-neutral-600">
             Will-call pickups, shop tours by appointment, and live inventory checks — Monday to
             Friday, 06:00–18:00 EST.
           </p>
@@ -310,7 +310,7 @@ const PlantMap = () => (
       </div>
 
       <Reveal delay={0.25} className="lg:col-span-8">
-        <div className="corner-frame relative border border-white/20 bg-neutral-950 p-2" data-testid="plant-map-frame">
+        <div className="corner-frame relative border border-line bg-white p-2" data-testid="plant-map-frame">
           <iframe
             title="ForgeLine Metals — 51 Roysun Rd Unit 9, Woodbridge, ON"
             data-testid="plant-map"
@@ -332,14 +332,14 @@ const PlantMap = () => (
 const CtaBand = () => {
   const { openQuote } = useQuote();
   return (
-    <section className="relative overflow-hidden bg-black" data-testid="cta-band-section">
-      <SparkCanvas density={26} dark />
-      <div className="blueprint-grid-fine absolute inset-0" aria-hidden="true" />
+    <section className="relative overflow-hidden border-t border-line" data-testid="cta-band-section">
+      <SparkCanvas density={26} />
+      <div className="blueprint-grid absolute inset-0" aria-hidden="true" />
       <div className="relative mx-auto max-w-[1440px] px-5 py-28 text-center sm:px-8 sm:py-36">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/60">Specs In — Metal Out</p>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-steel">Specs In — Metal Out</p>
         </Reveal>
-        <h2 className="mx-auto mt-6 max-w-4xl font-head text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl">
+        <h2 className="mx-auto mt-6 max-w-4xl font-head text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-neutral-900 sm:text-7xl">
           <MaskLine delay={0.1}>Spec It.</MaskLine>
           <MaskLine delay={0.22}>
             <span className="text-forge">We Fabricate It.</span>
@@ -358,7 +358,7 @@ const CtaBand = () => {
           <Link
             to="/contact"
             data-testid="cta-band-contact-button"
-            className="font-mono text-xs uppercase tracking-[0.25em] text-white/60 underline decoration-white/30 underline-offset-8 transition-colors hover:text-white hover:decoration-white"
+            className="font-mono text-xs uppercase tracking-[0.25em] text-neutral-600 underline decoration-linehi underline-offset-8 transition-colors hover:text-steel hover:decoration-steel"
           >
             Talk To The Shop
           </Link>
