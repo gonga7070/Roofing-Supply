@@ -1,8 +1,7 @@
 import { useEffect, useRef, createContext, useContext, useCallback } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route, useLocation, useNavigate, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Lenis from "lenis";
-import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
@@ -34,21 +33,6 @@ const ScrollManager = ({ lenisRef }) => {
   return null;
 };
 
-const BackHome = () => {
-  const { pathname } = useLocation();
-  if (pathname === "/") return null;
-  return (
-    <Link
-      to="/"
-      data-testid="back-home-button"
-      className="group fixed left-4 top-[86px] z-[70] flex items-center gap-2 border border-line bg-white/85 px-3.5 py-2.5 font-mono text-[10px] uppercase tracking-[0.25em] text-neutral-700 backdrop-blur transition-colors duration-200 hover:border-forge hover:text-forge sm:left-8"
-    >
-      <ArrowLeft size={13} strokeWidth={2} className="transition-transform duration-200 group-hover:-translate-x-0.5" />
-      Home
-    </Link>
-  );
-};
-
 const Shell = ({ lenisRef }) => {
   const navigate = useNavigate();
   const openQuote = useCallback(() => navigate("/contact"), [navigate]);
@@ -58,7 +42,6 @@ const Shell = ({ lenisRef }) => {
       <div className="App min-h-screen bg-ink font-body text-neutral-900">
         <div className="noise-overlay" aria-hidden="true" />
         <Navbar />
-        <BackHome />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
