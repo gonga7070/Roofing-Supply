@@ -245,7 +245,7 @@ const ProductStrip = () => {
                   className="group flex h-full flex-col border-b border-r border-line bg-panel/30 p-7 transition-colors duration-300 hover:bg-white"
                 >
                   <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-forge">{p.tag}</span>
-                  <div className="my-6 flex h-28 items-center justify-center bg-neutral-950 text-steel/70 transition-colors duration-300 group-hover:text-steel">
+                  <div className="my-6 flex h-28 items-center justify-center border border-line bg-white text-steel/70 transition-colors duration-300 group-hover:text-steel">
                     {p.image ? (
                       <img
                         src={p.image}

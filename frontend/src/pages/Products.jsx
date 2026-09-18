@@ -43,7 +43,7 @@ const ProductCard = ({ product, index, expanded, onToggle }) => {
         <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-forge">{product.tag}</span>
       </div>
 
-      <div className="blueprint-grid-fine flex h-44 items-center justify-center border-b border-line bg-neutral-950 text-steel/60 transition-colors duration-300 group-hover:text-steel">
+      <div className="blueprint-grid flex h-44 items-center justify-center border-b border-line bg-white text-steel/60 transition-colors duration-300 group-hover:text-steel">
         {product.image ? (
           <img
             src={product.image}
