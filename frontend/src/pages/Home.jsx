@@ -57,14 +57,14 @@ const Hero = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative flex min-h-screen flex-col overflow-hidden bg-black" data-testid="hero-section">
+    <section ref={sectionRef} className="relative flex min-h-screen flex-col overflow-hidden" data-testid="hero-section">
       <motion.div style={{ y: bgY }} className="absolute inset-0 scale-110" aria-hidden="true">
         <img src={IMAGES.hero} alt="" className="h-full w-full object-cover opacity-40 saturate-[0.7]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/55 to-white" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-transparent to-white/40" />
       </motion.div>
-      <div className="blueprint-grid-fine absolute inset-0" aria-hidden="true" />
-      <SparkCanvas density={36} dark />
+      <div className="blueprint-grid absolute inset-0" aria-hidden="true" />
+      <SparkCanvas density={36} />
 
       <motion.div
         style={{ opacity: fade, y: titleY }}
@@ -73,13 +73,13 @@ const Hero = () => {
         <div className="grid items-center gap-14 lg:grid-cols-12">
           <div className="lg:col-span-8">
             <MaskLine delay={0.15}>
-              <span className="inline-flex items-center gap-3 border border-white/20 bg-black/60 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.3em] text-white/70 backdrop-blur sm:text-xs">
+              <span className="inline-flex items-center gap-3 border border-linehi bg-white/70 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.3em] text-steel backdrop-blur sm:text-xs">
                 <span className="h-1.5 w-1.5 animate-pulse bg-forge" aria-hidden="true" />
                 Commercial Roofing Fabrications — Est. 1998
               </span>
             </MaskLine>
 
-            <h1 className="mt-7 font-head text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-7 font-head text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-neutral-900 sm:text-6xl lg:text-7xl">
               <MaskLine delay={0.3}>Built for the elements.</MaskLine>
               <MaskLine delay={0.42}>
                 <span className="text-forge">Engineered for performance.</span>
@@ -88,7 +88,7 @@ const Hero = () => {
             </h1>
 
             <Reveal delay={0.75} className="mt-6 max-w-xl">
-              <p className="text-base leading-relaxed text-white/65 sm:text-lg">
+              <p className="text-base leading-relaxed text-neutral-600 sm:text-lg">
                 We manufacture the drainage and edge-metal components that keep commercial flat
                 roofs watertight — roof drains, scuppers, cones, stack jacks and more, brake-formed
                 and TIG-welded in Woodbridge, ON.
@@ -108,7 +108,7 @@ const Hero = () => {
               <Link
                 to="/products"
                 data-testid="hero-cta-catalog-button"
-                className="group flex items-center gap-3 border border-white/25 px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] text-white/85 transition-colors duration-200 hover:border-white hover:text-white"
+                className="group flex items-center gap-3 border border-linehi px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] text-neutral-800 transition-colors duration-200 hover:border-steel hover:text-steel"
               >
                 Browse The Catalog
                 <ArrowRight size={15} strokeWidth={2} className="transition-transform duration-200 group-hover:translate-x-1" />
@@ -123,7 +123,7 @@ const Hero = () => {
                   onMouseMove={onTilt}
                   onMouseLeave={resetTilt}
                   style={{ rotateX: srx, rotateY: sry, transformStyle: "preserve-3d" }}
-                  className="corner-frame spotlight-card relative border border-white/20"
+                  className="corner-frame spotlight-card relative border border-linehi"
                   data-testid="hero-feature-frame"
                 >
                   <img
@@ -140,11 +140,11 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      <motion.div style={{ opacity: fade }} className="relative z-10 border-t border-white/10">
+      <motion.div style={{ opacity: fade }} className="relative z-10 border-t border-line/70">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-8">
-          <span className="font-mono text-[10px] tracking-[0.3em] text-white/40">43.7850° N / 79.6139° W</span>
+          <span className="font-mono text-[10px] tracking-[0.3em] text-neutral-500">43.7850° N / 79.6139° W</span>
           <span className="hidden h-8 w-px origin-top animate-scroll-pulse bg-forge sm:block" aria-hidden="true" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40">Scroll — 001</span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-500">Scroll — 001</span>
         </div>
       </motion.div>
     </section>
