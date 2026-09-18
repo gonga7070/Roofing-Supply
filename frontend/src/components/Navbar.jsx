@@ -47,6 +47,9 @@ export default function Navbar() {
           <NavLink to="/gallery" data-testid="nav-gallery-link" className={navLink}>
             Gallery
           </NavLink>
+          <NavLink to="/about" data-testid="nav-about-link" className={navLink}>
+            About
+          </NavLink>
           <NavLink to="/contact" data-testid="nav-contact-link" className={navLink}>
             Contact
           </NavLink>
@@ -89,6 +92,7 @@ export default function Navbar() {
                 { to: "/", label: "Home", id: "mobile-home-link" },
                 { to: "/products", label: "Products", id: "mobile-products-link" },
                 { to: "/gallery", label: "Gallery", id: "mobile-gallery-link" },
+                { to: "/about", label: "About", id: "mobile-about-link" },
                 { to: "/contact", label: "Contact", id: "mobile-contact-link" },
               ].map((l) => (
                 <Link

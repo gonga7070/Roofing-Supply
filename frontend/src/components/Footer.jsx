@@ -63,6 +63,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link to="/about" data-testid="footer-about-link" className="link-underline text-neutral-600 transition-colors hover:text-forge">
+                About Us
+              </Link>
+            </li>
+            <li>
               <Link to="/contact" data-testid="footer-contact-link" className="link-underline text-neutral-600 transition-colors hover:text-forge">
                 Contact
               </Link>
