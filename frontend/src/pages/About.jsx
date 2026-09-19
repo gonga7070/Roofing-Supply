@@ -86,7 +86,7 @@ export default function About() {
                 data-testid="about-contact-button"
                 className="group inline-flex items-center gap-3 border border-forge bg-forge px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-ink transition-colors duration-200 hover:bg-transparent hover:text-forge"
               >
-                Talk To The Shop
+                Contact Us
                 <ArrowUpRight size={14} strokeWidth={2} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </Reveal>

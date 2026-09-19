@@ -360,7 +360,7 @@ const CtaBand = () => {
             data-testid="cta-band-contact-button"
             className="font-mono text-xs uppercase tracking-[0.25em] text-neutral-600 underline decoration-linehi underline-offset-8 transition-colors hover:text-steel hover:decoration-steel"
           >
-            Talk To The Shop
+            Contact Us
           </Link>
         </Reveal>
       </div>

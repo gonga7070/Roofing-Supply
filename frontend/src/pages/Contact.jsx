@@ -38,7 +38,7 @@ export default function Contact() {
         <div className="blueprint-grid absolute inset-0" aria-hidden="true" />
         <SparkCanvas density={20} />
         <div className="relative mx-auto max-w-[1440px] px-5 pb-16 pt-20 sm:px-8 sm:pt-28">
-          <SectionHead index="TLK" eyebrow="Direct To The Estimating Desk" title="Talk To The Shop" />
+          <SectionHead index="TLK" eyebrow="Direct To The Estimating Desk" title="Contact Us" />
           <Reveal delay={0.15} className="mt-6 max-w-2xl">
             <p className="text-base leading-relaxed text-neutral-600">
               Call or email with the spec — sizes, gauges, finishes, quantities. A real estimator
