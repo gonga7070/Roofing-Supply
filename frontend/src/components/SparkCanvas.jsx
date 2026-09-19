@@ -59,7 +59,7 @@ export default function SparkCanvas({ density = 42, className = "", dark = false
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
     };
-  }, [density]);
+  }, [density, dark]);
 
   return (
     <canvas
