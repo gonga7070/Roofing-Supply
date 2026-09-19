@@ -15,7 +15,7 @@ export const Reveal = ({ children, delay = 0, y = 32, className = "" }) => (
     className={className}
     initial={hasPlayedEntrance() ? false : { opacity: 0, y }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-70px" }}
+    viewport={{ once: true, amount: 0.12, margin: "0px 0px -4% 0px" }}
     transition={{ duration: 0.75, delay, ease: EASE }}
   >
     {children}
